@@ -1,0 +1,2189 @@
+<!DOCTYPE html>
+<html lang="th" translate="no">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="google" content="notranslate">
+<meta name="format-detection" content="telephone=no">
+<meta name="theme-color" content="#0a0018">
+<title>VOCAB RIDER — NEON THAILAND (Offline)</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+--pink:#ff2fb9;--cyan:#00e5ff;--violet:#8a2bff;--gold:#ffe600;--mint:#4dffb8;--orange:#ff8a00;
+--ink:#e9f4ff;--dim:#8f9ec4;--panel:rgba(11,3,28,.68);--line:rgba(0,229,255,.22);
+--mono:ui-monospace,'SF Mono',SFMono-Regular,Menlo,Consolas,'Courier New',monospace;
+--disp:'Arial Black',Impact,'Helvetica Neue',system-ui,sans-serif;
+--body:system-ui,-apple-system,'Segoe UI',Roboto,'Noto Sans Thai','Leelawadee UI',Tahoma,sans-serif;
+}
+html{-webkit-text-size-adjust:100%}
+body{font-family:var(--body);color:var(--ink);background:#05000f;min-height:100vh;overflow-x:hidden;-webkit-font-smoothing:antialiased;line-height:1.5}
+body::before{content:'';position:fixed;inset:0;z-index:-3;background:
+radial-gradient(ellipse 90% 55% at 50% 4%,rgba(138,43,255,.42),transparent 62%),
+radial-gradient(ellipse 60% 42% at 88% 92%,rgba(255,47,185,.26),transparent 62%),
+radial-gradient(ellipse 60% 42% at 6% 72%,rgba(0,229,255,.18),transparent 62%),
+linear-gradient(180deg,#0b0020 0%,#14002e 42%,#05000f 100%)}
+.stars{position:fixed;inset:0;z-index:-2;pointer-events:none;opacity:.55;background-image:
+radial-gradient(1.4px 1.4px at 12% 16%,#fff,transparent),
+radial-gradient(1.2px 1.2px at 68% 9%,#cfe9ff,transparent),
+radial-gradient(1.6px 1.6px at 84% 28%,#ffd9f4,transparent),
+radial-gradient(1.1px 1.1px at 32% 42%,#fff,transparent),
+radial-gradient(1.3px 1.3px at 88% 62%,#bff6ff,transparent),
+radial-gradient(1.1px 1.1px at 8% 74%,#fff,transparent),
+radial-gradient(1.5px 1.5px at 46% 88%,#ffe6c9,transparent),
+radial-gradient(1.1px 1.1px at 22% 58%,#fff,transparent);
+animation:twinkle 4.5s ease-in-out infinite}
+@keyframes twinkle{0%,100%{opacity:.35}50%{opacity:.75}}
+.floor{position:fixed;left:-20%;right:-20%;bottom:0;height:44vh;z-index:-2;pointer-events:none;opacity:.5;
+transform:perspective(330px) rotateX(68deg);transform-origin:bottom center;
+background-image:linear-gradient(rgba(0,229,255,.5) 1px,transparent 1px),linear-gradient(90deg,rgba(255,47,185,.42) 1px,transparent 1px);
+background-size:46px 46px;animation:gridmove 5s linear infinite;
+-webkit-mask-image:linear-gradient(transparent,#000 55%);mask-image:linear-gradient(transparent,#000 55%)}
+@keyframes gridmove{to{background-position:0 46px,0 0}}
+.scanlines{position:fixed;inset:0;z-index:70;pointer-events:none;opacity:.32;background:repeating-linear-gradient(0deg,rgba(0,0,0,.3) 0 1px,transparent 1px 3px)}
+.vhs{position:fixed;inset:0;z-index:69;pointer-events:none;opacity:.05;background-image:repeating-linear-gradient(90deg,rgba(255,255,255,.6) 0 1px,transparent 1px 3px);mix-blend-mode:overlay;animation:vhsj .7s steps(3) infinite}
+@keyframes vhsj{0%{transform:translateY(0)}50%{transform:translateY(2px)}100%{transform:translateY(-1px)}}
+.wrap{max-width:1080px;margin:0 auto;padding:clamp(10px,2.2vw,22px) clamp(10px,2.2vw,22px) 40px;position:relative;z-index:1}
+.chrome{background:linear-gradient(180deg,#fff 0%,#d8efff 26%,#79c8ff 44%,#ff7ad9 56%,#b98cff 74%,#fff 100%);-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 2px 0 rgba(0,0,0,.45)) drop-shadow(0 0 16px rgba(255,47,185,.45))}
+.kicker{font-family:var(--mono);font-size:10px;letter-spacing:.3em;color:var(--pink);text-transform:uppercase}
+.lbl{font-family:var(--mono);font-size:10px;letter-spacing:.22em;color:var(--dim);text-transform:uppercase;display:block;margin-bottom:6px}
+.mono{font-family:var(--mono)}
+.dim{color:var(--dim)}
+.th-sub{font-size:13px;color:#c3cfe9;letter-spacing:.02em}
+h1.logo{font-family:var(--disp);font-weight:900;letter-spacing:.05em;line-height:.94;font-size:clamp(34px,8vw,60px);margin:6px 0 8px}
+.panel{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:16px;backdrop-filter:blur(7px);box-shadow:0 0 0 1px rgba(255,47,185,.06) inset,0 18px 40px -24px rgba(0,229,255,.55);position:relative}
+.panel+.panel{margin-top:12px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;width:100%;padding:14px 18px;border-radius:11px;cursor:pointer;font-family:var(--body);font-weight:800;font-size:12.5px;letter-spacing:.16em;text-transform:uppercase;color:#f2fbff;border:1px solid rgba(0,229,255,.55);background:linear-gradient(180deg,rgba(0,229,255,.22),rgba(138,43,255,.28));transition:transform .16s,box-shadow .2s,filter .2s}
+.btn:hover:not(:disabled){box-shadow:0 0 26px rgba(0,229,255,.45),inset 0 0 22px rgba(255,47,185,.2);transform:translateY(-1px)}
+.btn:active:not(:disabled){transform:translateY(1px) scale(.995)}
+.btn:disabled{opacity:.35;cursor:not-allowed}
+.btn.pink{border-color:rgba(255,47,185,.65);background:linear-gradient(180deg,rgba(255,47,185,.3),rgba(138,43,255,.32))}
+.btn.ghost{background:transparent;border-color:rgba(143,158,196,.4);color:#cfdcf5;font-weight:700}
+.btn.big{font-size:14px;padding:16px 20px}
+.row{display:flex;gap:10px;flex-wrap:wrap}
+.row .btn{width:auto;flex:1;min-width:150px}
+input{width:100%;padding:13px 14px;background:rgba(4,0,14,.62);border:1px solid rgba(255,47,185,.36);border-radius:11px;color:#fff;font-family:var(--body);font-size:15px;letter-spacing:.03em}
+input:focus{outline:none;border-color:var(--cyan);box-shadow:0 0 18px rgba(0,229,255,.3)}
+input::placeholder{color:#5d6b8c}
+.scanner{position:relative;height:8px;border-radius:6px;background:rgba(0,229,255,.09);overflow:hidden}
+.scanner i{position:absolute;top:0;height:100%;width:46px;border-radius:6px;background:linear-gradient(90deg,transparent,var(--cyan),#fff,var(--cyan),transparent);box-shadow:0 0 14px var(--cyan);animation:scanx 1.6s ease-in-out infinite alternate}
+@keyframes scanx{from{left:-46px}to{left:calc(100% - 2px)}}
+.pbar{height:7px;background:rgba(255,255,255,.08);border-radius:6px;overflow:hidden}
+.pbar i{display:block;height:100%;background:linear-gradient(90deg,var(--cyan),var(--pink));box-shadow:0 0 12px rgba(255,47,185,.7);transition:width .35s}
+/* boot */
+.boot{display:grid;gap:14px;padding-top:clamp(10px,4vh,44px)}
+@media(min-width:880px){.boot{grid-template-columns:1.15fr .85fr;align-items:start;gap:22px}}
+.avgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:6px}
+.avtile{background:rgba(4,0,14,.5);border:1px solid rgba(143,158,196,.3);border-radius:12px;padding:6px 4px;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:4px;transition:.18s;font-family:inherit}
+.avtile span{font-family:var(--mono);font-size:7.5px;letter-spacing:.06em;color:var(--dim);text-transform:uppercase;text-align:center;line-height:1.2}
+.avtile:hover{border-color:rgba(0,229,255,.6)}
+.avtile.on{border-color:var(--cyan);background:rgba(0,229,255,.12);box-shadow:0 0 18px rgba(0,229,255,.35)}
+.avtile.on span{color:var(--cyan)}
+.avbig{display:flex;justify-content:center;padding:6px 0 2px}
+/* HUD */
+.topbar{display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between;margin-bottom:12px}
+.brand{line-height:.9;font-family:var(--disp);font-weight:900;font-size:22px;letter-spacing:.06em}
+.brand small{display:block;font-family:var(--mono);font-size:8px;letter-spacing:.34em;color:var(--dim);margin-top:6px}
+.stats{display:flex;gap:8px;flex-wrap:wrap}
+.stat{background:rgba(11,3,28,.66);border:1px solid var(--line);border-radius:11px;padding:7px 11px;min-width:74px}
+.stat span{display:block;font-family:var(--mono);font-size:7.5px;letter-spacing:.2em;color:var(--dim)}
+.stat b{font-family:var(--mono);font-size:15px;color:#fff;letter-spacing:.04em}
+.stat b i{font-style:normal;font-size:10px;color:var(--dim)}
+.who{display:flex;align-items:center;gap:9px;background:rgba(11,3,28,.66);border:1px solid rgba(255,47,185,.3);border-radius:11px;padding:6px 12px 6px 6px}
+.who b{display:block;font-size:12px;letter-spacing:.08em}
+.who span{font-family:var(--mono);font-size:8px;letter-spacing:.16em;color:var(--gold)}
+/* map */
+.mapgrid{display:grid;gap:12px}
+@media(min-width:900px){.mapgrid{grid-template-columns:minmax(0,1fr) 360px;align-items:start}}
+.map{position:relative;aspect-ratio:800/1100;width:100%;border:1px solid rgba(255,47,185,.35);border-radius:16px;overflow:hidden;background:#05000f;box-shadow:0 0 42px -12px rgba(255,47,185,.5)}
+.map .ov{position:absolute;inset:0;pointer-events:none;background:repeating-linear-gradient(0deg,rgba(0,0,0,.22) 0 1px,transparent 1px 3px);z-index:5;opacity:.5}
+.glowline{animation:dashmove 1.6s linear infinite}
+@keyframes dashmove{to{stroke-dashoffset:-32}}
+.node{position:absolute;transform:translate(-50%,-50%);background:none;border:none;padding:0;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:2px;z-index:3;font-family:inherit}
+.node .nm{font-family:var(--mono);font-size:7.5px;letter-spacing:.1em;color:#ffe98a;background:rgba(4,0,14,.78);padding:1px 5px;border-radius:5px;white-space:nowrap;border:1px solid rgba(255,230,0,.24)}
+.node.lock{filter:grayscale(1);opacity:.4}
+.node .ring{position:absolute;border-radius:999px;pointer-events:none}
+.node .ring.sel{inset:-6px;border:2px solid var(--cyan);box-shadow:0 0 18px var(--cyan);animation:pulse 1.8s ease-in-out infinite}
+.node .ring.done{inset:-4px;border:2px solid var(--mint);box-shadow:0 0 12px rgba(77,255,184,.7)}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.45}}
+.lockb{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:14px;z-index:2}
+.me{position:absolute;transform:translate(-50%,-50%);z-index:4;pointer-events:none;display:flex;flex-direction:column;align-items:center;gap:1px;animation:bob 2.6s ease-in-out infinite}
+.me .tag{font-family:var(--mono);font-size:6.5px;letter-spacing:.16em;color:#05000f;background:var(--gold);padding:0 4px;border-radius:4px;font-weight:700}
+@keyframes bob{0%,100%{transform:translate(-50%,-52%)}50%{transform:translate(-50%,-48%)}}
+.fly{position:absolute;z-index:2;pointer-events:none;filter:drop-shadow(0 0 6px rgba(0,229,255,.9));animation:flyx linear infinite}
+@keyframes flyx{from{transform:translateX(-70px) translateY(0)}50%{transform:translateX(calc(100% + 70px)) translateY(-10px)}to{transform:translateX(-70px) translateY(0)}}
+.decowrap{position:absolute;inset:0;z-index:1;pointer-events:none;overflow:hidden}
+.deco{position:absolute;pointer-events:none;opacity:.5;animation-name:drift;animation-timing-function:ease-in-out;animation-iteration-count:infinite;animation-direction:alternate;filter:drop-shadow(0 0 10px rgba(255,47,185,.5))}
+@keyframes drift{0%{transform:translateY(0) rotate(-4deg);opacity:.32}100%{transform:translateY(-16px) rotate(5deg);opacity:.6}}
+.stk{display:inline-block;vertical-align:middle;border:0;background:none;pointer-events:none;user-select:none;-webkit-user-drag:none;filter:drop-shadow(0 0 8px rgba(0,229,255,.35))}
+.holo .stk{width:100%;height:100%;object-fit:contain;filter:drop-shadow(0 0 16px rgba(0,229,255,.6))}
+.prop{display:block;margin:8px auto 0;filter:drop-shadow(0 0 14px rgba(255,47,185,.45))}
+.marq{position:absolute;left:0;right:0;bottom:0;z-index:6;background:linear-gradient(90deg,rgba(255,47,185,.9),rgba(138,43,255,.9));color:#fff;font-family:var(--mono);font-size:8px;letter-spacing:.22em;overflow:hidden;white-space:nowrap;padding:3px 0}
+.marq span{display:inline-block;animation:marqz 18s linear infinite}
+@keyframes marqz{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.citycard h2{font-family:var(--disp);font-size:20px;letter-spacing:.02em;line-height:1.05}
+.citycard .th{font-size:12px;color:var(--dim)}
+.cityhead{display:flex;gap:12px;align-items:center}
+.stars{color:var(--gold);letter-spacing:.1em;font-size:16px;text-shadow:0 0 10px rgba(255,230,0,.5)}
+.mode{font-family:var(--mono);font-size:11px;letter-spacing:.12em;color:var(--pink);margin-top:10px}
+.mode em{color:var(--cyan);font-style:normal}
+.desc{font-size:12px;color:#a9b7d6;margin-top:4px}
+.locked-note{text-align:center;font-size:12px;color:#93a1c0;border:1px dashed rgba(143,158,196,.42);border-radius:10px;padding:11px;margin-top:12px}
+/* jet */
+.jetbox{display:flex;gap:11px;align-items:flex-start;border:1px solid rgba(255,138,0,.42);border-radius:14px;background:linear-gradient(180deg,rgba(60,22,0,.5),rgba(11,3,28,.6));padding:11px;margin-top:12px;position:relative;overflow:hidden}
+.jetbox::after{content:'';position:absolute;inset:0;background:repeating-linear-gradient(0deg,rgba(0,229,255,.07) 0 1px,transparent 1px 4px);pointer-events:none}
+.jetbox .jt{flex:1;min-width:0}
+.jetname{font-family:var(--mono);font-size:8.5px;font-weight:700;letter-spacing:.2em;color:#ffb056}
+.jettext{font-size:12px;line-height:1.55;color:#e7e2d8;margin-top:3px}
+.jetbtn{background:none;border:none;color:#ffb056;font-family:var(--mono);font-size:8.5px;letter-spacing:.16em;text-decoration:underline;cursor:pointer;margin:6px 12px 0 0;padding:0}
+.jetbtn.cy{color:var(--cyan)}
+.jetsvg{filter:drop-shadow(0 0 8px rgba(255,138,0,.55));flex:0 0 auto}
+/* games */
+.hud{display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:9px;font-family:var(--mono);font-size:10px;letter-spacing:.14em}
+.hud .c{color:var(--pink)}
+.hud .s{color:var(--cyan)}
+.hud .r{color:var(--gold)}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:16px;backdrop-filter:blur(6px)}
+.qbig{font-family:var(--disp);font-size:clamp(20px,5vw,32px);letter-spacing:.03em;text-align:center;color:#fff;text-shadow:0 0 22px rgba(0,229,255,.55);line-height:1.15}
+.qth{font-size:clamp(17px,4.6vw,25px);text-align:center;color:var(--cyan);text-shadow:0 0 18px rgba(0,229,255,.5);margin:10px 0}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:14px}
+@media(max-width:520px){.grid2{grid-template-columns:1fr}}
+.opt{padding:13px;border:1px solid rgba(143,158,196,.4);border-radius:11px;background:rgba(6,1,20,.6);color:#fff;cursor:pointer;font-size:15px;text-align:center;font-family:inherit;transition:.16s}
+.opt:hover:not(:disabled){border-color:var(--pink);box-shadow:0 0 18px rgba(255,47,185,.35)}
+.opt.right{border-color:var(--mint);background:rgba(0,90,60,.4);color:#9dffd8;box-shadow:0 0 18px rgba(77,255,184,.4)}
+.opt.wrongpick{border-color:#ff3b5c;background:rgba(120,0,25,.42);color:#ff9bab}
+.opt.dim{opacity:.32}
+.chip{padding:9px 12px;border:1px solid rgba(143,158,196,.42);border-radius:9px;background:rgba(6,1,20,.6);color:#fff;cursor:pointer;font-size:13.5px;font-family:inherit;transition:.14s}
+.chip:hover:not(:disabled){border-color:var(--cyan);color:var(--cyan)}
+.chip.dim{opacity:.3;cursor:not-allowed}
+.tile{width:40px;height:40px;border:1px solid rgba(143,158,196,.5);border-radius:9px;background:rgba(6,1,20,.7);color:#fff;font-size:16px;font-weight:700;cursor:pointer;font-family:var(--mono);margin:2px}
+.tile:hover{border-color:var(--pink);box-shadow:0 0 14px rgba(255,47,185,.4)}
+.slot{width:31px;height:42px;border:1px dashed rgba(143,158,196,.42);border-radius:8px;background:rgba(4,0,14,.5);color:#5a6784;font-size:16px;font-weight:700;cursor:pointer;font-family:var(--mono);margin:2px}
+.slot.on{border-style:solid;border-color:var(--cyan);color:var(--cyan);background:rgba(0,60,70,.35);box-shadow:0 0 12px rgba(0,229,255,.4)}
+.holo{width:150px;height:150px;margin:12px auto;border:1px solid var(--cyan);border-radius:18px;background:linear-gradient(180deg,rgba(0,90,110,.35),rgba(0,0,0,.85));display:flex;align-items:center;justify-content:center;font-size:76px;box-shadow:0 0 34px rgba(0,229,255,.4),inset 0 0 40px rgba(0,229,255,.18);position:relative;overflow:hidden;animation:holo 3.4s ease-in-out infinite}
+@keyframes holo{0%,100%{filter:hue-rotate(0)}50%{filter:hue-rotate(28deg)}}
+.holo::after{content:'';position:absolute;inset:0;background:repeating-linear-gradient(0deg,rgba(0,0,0,.22) 0 2px,transparent 2px 4px);pointer-events:none}
+.ok{color:var(--mint);font-weight:800;text-align:center}
+.bad{color:#ff8497;font-weight:800;text-align:center}
+.tiny{font-family:var(--mono);font-size:9px;letter-spacing:.18em;color:#616f92;text-align:center}
+/* laser */
+.sky{position:relative;height:min(56vh,400px);border:1px solid rgba(255,47,185,.42);border-radius:14px;overflow:hidden;background:
+radial-gradient(ellipse 70% 50% at 50% 100%,rgba(255,47,185,.28),transparent 65%),
+linear-gradient(180deg,#07001a,#0d0030 60%,#1a0038);touch-action:manipulation}
+.sky::after{content:'';position:absolute;left:-30%;right:-30%;bottom:0;height:42%;transform:perspective(240px) rotateX(64deg);transform-origin:bottom;background-image:linear-gradient(rgba(0,229,255,.5) 1px,transparent 1px),linear-gradient(90deg,rgba(0,229,255,.42) 1px,transparent 1px);background-size:34px 34px;pointer-events:none;opacity:.65}
+.sky .st{position:absolute;width:2px;height:2px;background:#fff;border-radius:2px;opacity:.8}
+.ship{position:absolute;transform:translate(-50%,-50%);background:none;border:none;padding:0;cursor:pointer;z-index:3;display:flex;flex-direction:column;align-items:center;gap:2px;font-family:inherit}
+.ship .body{font-size:15px;filter:drop-shadow(0 0 8px rgba(255,47,185,.9))}
+.ship .lb{font-family:var(--mono);font-size:9px;color:#fff;background:rgba(0,0,0,.8);border:1px solid rgba(255,47,185,.7);border-radius:5px;padding:1px 5px;white-space:nowrap}
+.cannon{position:absolute;left:50%;bottom:-4px;transform:translateX(-50%);z-index:4;font-size:26px;filter:drop-shadow(0 0 12px rgba(0,229,255,.95))}
+.beam{position:absolute;height:3px;transform-origin:0 50%;background:linear-gradient(90deg,rgba(0,229,255,.2),#fff);border-radius:3px;box-shadow:0 0 12px var(--cyan),0 0 26px var(--cyan);z-index:3;pointer-events:none;animation:beamf .26s ease-out forwards}
+@keyframes beamf{from{opacity:1;height:5px}to{opacity:0;height:1px}}
+.boom{position:absolute;transform:translate(-50%,-50%);font-size:26px;z-index:4;pointer-events:none;animation:boomf .55s ease-out forwards}
+@keyframes boomf{0%{opacity:1;transform:translate(-50%,-50%) scale(.6)}100%{opacity:0;transform:translate(-50%,-50%) scale(2.1)}}
+/* cable */
+.cablewrap{position:relative;display:grid;grid-template-columns:1fr 1fr;gap:18px;padding:6px 0}
+.cablewrap svg{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:1}
+.col{display:flex;flex-direction:column;gap:8px;position:relative;z-index:2}
+.port{display:flex;align-items:center;gap:7px;padding:9px 10px;border:1px solid rgba(143,158,196,.42);border-radius:9px;background:rgba(6,1,20,.78);color:#fff;cursor:pointer;font-family:inherit;font-size:12.5px;transition:.15s;position:relative}
+.port:hover{border-color:var(--cyan)}
+.port.sel{border-color:var(--cyan);box-shadow:0 0 16px rgba(0,229,255,.5);color:var(--cyan)}
+.port.done{border-color:rgba(77,255,184,.7);color:#9dffd8;opacity:.85;cursor:default}
+.port .dot{width:7px;height:7px;border-radius:99px;background:var(--cyan);box-shadow:0 0 8px var(--cyan);flex:0 0 auto}
+.col.r .port{justify-content:flex-end;text-align:right}
+.port.flash{border-color:#ff3b5c;color:#ff9bab;animation:shake .3s}
+@keyframes shake{0%,100%{transform:translateX(0)}30%{transform:translateX(-4px)}70%{transform:translateX(4px)}}
+/* code */
+.term{background:#04010d;border:1px solid rgba(77,255,184,.35);border-radius:12px;padding:12px;font-family:var(--mono);font-size:11.5px;line-height:1.75;box-shadow:inset 0 0 40px rgba(77,255,184,.07);min-height:110px}
+.term .kw{color:var(--pink);font-weight:700}
+.term .vr{color:var(--cyan)}
+.term .st{color:var(--gold)}
+.term .out{color:var(--mint)}
+.term .err{color:#ff6b83}
+.term .prompt{color:#5a6784}
+.codeline{display:block;text-align:left;width:100%;background:none;border:1px solid rgba(143,158,196,.32);border-radius:8px;padding:7px 9px;margin-bottom:6px;font-family:var(--mono);font-size:11.5px;color:#dbe6ff;cursor:pointer;transition:.14s}
+.codeline:hover{border-color:var(--cyan);background:rgba(0,229,255,.08)}
+.codeline.used{opacity:.25;cursor:default}
+.gap{display:flex;flex-direction:column;gap:4px;min-height:60px}
+.cursor{display:inline-block;width:7px;height:12px;background:var(--mint);animation:blinkc 1s steps(2) infinite;vertical-align:-2px}
+@keyframes blinkc{0%,100%{opacity:1}50%{opacity:0}}
+/* certificate */
+.cert{position:relative;border:2px solid rgba(255,47,185,.6);border-radius:18px;padding:clamp(16px,3vw,30px);background:radial-gradient(ellipse at 50% 0%,rgba(138,43,255,.28),transparent 62%),linear-gradient(180deg,#0d0124,#05000f);box-shadow:0 0 60px -18px rgba(255,47,185,.7);overflow:hidden}
+.cert::before{content:'';position:absolute;inset:8px;border:1px solid rgba(0,229,255,.25);border-radius:12px;pointer-events:none}
+.cert h1{font-family:var(--disp);font-size:clamp(24px,6vw,42px);letter-spacing:.12em;text-align:center;line-height:1}
+.certname{font-family:var(--disp);font-size:clamp(22px,5.5vw,36px);letter-spacing:.03em;text-align:center;color:#fff;text-shadow:0 0 26px rgba(0,229,255,.6);margin:4px 0 10px;word-break:break-word}
+.certline{text-align:center;font-size:12.5px;color:#c3cfe9;line-height:1.9}
+.certline b{color:var(--gold);font-family:var(--mono)}
+.tbl{width:100%;border-collapse:collapse;margin-top:14px;font-family:var(--mono);font-size:10px}
+.tbl th{text-align:left;color:var(--dim);font-weight:500;letter-spacing:.14em;padding:5px 6px;border-bottom:1px solid rgba(143,158,196,.3)}
+.tbl td{padding:5px 6px;border-bottom:1px solid rgba(143,158,196,.12);color:#dbe6ff}
+.tbl td.n{text-align:right}
+.tbl .mis{color:#5a6784}
+.seal{display:flex;align-items:center;justify-content:center;gap:14px;margin-top:16px;flex-wrap:wrap}
+.seal .stamp{width:74px;height:74px;border-radius:99px;border:2px solid var(--cyan);display:flex;align-items:center;justify-content:center;text-align:center;font-family:var(--mono);font-size:7px;letter-spacing:.14em;color:var(--cyan);line-height:1.5;box-shadow:0 0 26px rgba(0,229,255,.45),inset 0 0 20px rgba(0,229,255,.2);transform:rotate(-8deg)}
+.sign{flex:1;min-width:150px;text-align:center}
+.sign .ln{border-top:1px solid rgba(143,158,196,.5);margin-top:26px;padding-top:5px;font-family:var(--mono);font-size:8px;letter-spacing:.16em;color:var(--dim)}
+.rank{display:inline-block;font-family:var(--mono);font-size:10px;letter-spacing:.22em;padding:4px 12px;border-radius:99px;border:1px solid var(--gold);color:var(--gold);margin-top:8px}
+/* ---------- NEON BOOST + UNIT 2 ---------- */
+@keyframes neonpulse{0%,100%{filter:drop-shadow(0 0 6px rgba(0,229,255,.65))}50%{filter:drop-shadow(0 0 16px rgba(255,47,185,.95))}}
+@keyframes neondrift{0%{transform:translateY(0)}50%{transform:translateY(-5px)}100%{transform:translateY(0)}}
+.card{box-shadow:0 0 46px -22px rgba(255,47,185,.95),inset 0 0 26px rgba(138,43,255,.09)}
+.btn{box-shadow:0 0 24px -12px rgba(255,47,185,.9)}
+.btn:hover{box-shadow:0 0 34px -6px rgba(255,47,185,1)}
+.node .ring.sel{animation:neonpulse 2.4s ease-in-out infinite}
+.decowrap .deco .stk{filter:drop-shadow(0 0 10px rgba(255,90,190,.7))}
+
+.holopic{position:relative;margin:10px auto 14px;width:min(100%,290px);aspect-ratio:1;border-radius:16px;overflow:hidden;border:2px solid rgba(0,229,255,.7);background:#0a0320;box-shadow:0 0 38px -8px rgba(0,229,255,.95),inset 0 0 30px rgba(255,47,185,.28)}
+.holopic img{width:100%;height:100%;object-fit:cover;display:block;filter:saturate(1.12) contrast(1.05)}
+.holoscan{position:absolute;inset:0;background:repeating-linear-gradient(0deg,rgba(0,0,0,.28) 0 1px,transparent 1px 3px);pointer-events:none;box-shadow:inset 0 0 42px rgba(255,47,185,.4)}
+.stkstage{position:relative;display:grid;place-items:center;margin:6px auto 16px;width:min(100%,240px);height:200px}
+.stkstage img{filter:drop-shadow(0 0 26px rgba(255,47,185,.85)) drop-shadow(0 0 12px rgba(0,229,255,.6));animation:stkbob 2.8s ease-in-out infinite}
+.stickrack{position:absolute;left:0;right:0;bottom:16px;height:2px;background:linear-gradient(90deg,transparent,rgba(0,229,255,.85),transparent);box-shadow:0 0 18px rgba(0,229,255,.9)}
+@keyframes stkbob{0%,100%{transform:translateY(-4px) rotate(-2deg)}50%{transform:translateY(6px) rotate(2deg)}}
+.duel .dueltop{display:flex;align-items:center;justify-content:center;gap:8px;margin-bottom:6px}
+.duelq{font-family:var(--disp);font-size:clamp(13px,3.4vw,17px);line-height:1.55;color:#fff;background:rgba(0,229,255,.07);border-left:3px solid #00e5ff;border-radius:0 10px 10px 0;padding:10px 12px;margin:4px 0 12px;text-shadow:0 0 16px rgba(0,229,255,.55)}
+.duelopt{display:block;width:100%;text-align:left;font-size:13px;line-height:1.5;color:#e6eeff;background:rgba(10,2,28,.8);border:1px solid rgba(143,158,196,.34);border-radius:12px;padding:11px 13px;margin-bottom:8px;cursor:pointer;transition:.15s;font-family:inherit}
+.duelopt:hover{border-color:#ff2fb9;box-shadow:0 0 24px -6px rgba(255,47,185,.9);transform:translateX(2px)}
+.duelopt.right{border-color:#4dffb8;background:rgba(77,255,184,.14);box-shadow:0 0 24px -6px rgba(77,255,184,.9)}
+.duelopt.wrongpick{border-color:#ff3b5c;background:rgba(255,59,92,.12)}
+.duelopt.dim{opacity:.45}
+.duelwhy{font-size:11px;color:#ffe600;line-height:1.6;margin-top:6px;border-top:1px dashed rgba(255,230,0,.3);padding-top:6px}
+/* ---------- STUDENT AVATAR PORTRAITS ---------- */
+.avimg{display:inline-block;border-radius:50%;overflow:hidden;border:2px solid rgba(0,229,255,.85);background:#0a0022;box-shadow:0 0 16px rgba(0,229,255,.55),0 0 30px -8px rgba(255,47,185,.95);flex:none}
+.avimg img{width:100%;height:100%;object-fit:cover;display:block}
+.avtile .avimg{border-width:1.5px;box-shadow:0 0 12px rgba(0,229,255,.5)}
+.me .avimg,.who .avimg{border-color:rgba(255,230,0,.9);box-shadow:0 0 14px rgba(255,230,0,.6)}
+/* ---------- VAPOURWAVE GRID + EXTRA NEON ---------- */
+.gridwave{position:fixed;inset:0;z-index:-2;pointer-events:none;opacity:.32;
+background-image:linear-gradient(rgba(138,43,255,.75) 1px,transparent 1px),linear-gradient(90deg,rgba(138,43,255,.75) 1px,transparent 1px);
+background-size:64px 64px;
+-webkit-mask-image:radial-gradient(ellipse 80% 62% at 50% 46%,#000 10%,transparent 82%);
+mask-image:radial-gradient(ellipse 80% 62% at 50% 46%,#000 10%,transparent 82%);
+animation:griddrift 24s linear infinite}
+@keyframes griddrift{from{background-position:0 0,0 0}to{background-position:64px 0,0 64px}}
+.neonbars{position:fixed;left:0;right:0;top:0;height:3px;z-index:30;pointer-events:none;background:linear-gradient(90deg,#00e5ff,#8a2bff,#ff2fb9,#ffe600,#00e5ff);box-shadow:0 0 20px rgba(255,47,185,.95);animation:huecycle 9s linear infinite}
+@keyframes huecycle{to{filter:hue-rotate(360deg)}}
+.panel,.card{background-image:linear-gradient(rgba(138,43,255,.12) 1px,transparent 1px),linear-gradient(90deg,rgba(138,43,255,.12) 1px,transparent 1px);background-size:26px 26px}
+.panel{border-color:rgba(138,43,255,.45);box-shadow:0 0 40px -22px rgba(138,43,255,.95),inset 0 0 26px rgba(0,229,255,.06)}
+.map{border-color:rgba(138,43,255,.6);box-shadow:0 0 52px -10px rgba(138,43,255,.95),0 0 26px -12px rgba(0,229,255,.85),inset 0 0 44px rgba(255,47,185,.18)}
+.map .ov{background:repeating-linear-gradient(0deg,rgba(0,0,0,.22) 0 1px,transparent 1px 3px),radial-gradient(ellipse 70% 50% at 50% 100%,rgba(138,43,255,.28),transparent 70%)}
+.btn{position:relative;overflow:hidden}
+.btn::after{content:'';position:absolute;inset:0;pointer-events:none;background:linear-gradient(115deg,transparent 32%,rgba(255,255,255,.28) 50%,transparent 68%);transform:translateX(-130%);animation:sheen 4.2s ease-in-out infinite}
+@keyframes sheen{0%,72%{transform:translateX(-130%)}100%{transform:translateX(130%)}}
+/* ---------- BONUS SHOOTERS ---------- */
+.pickgrid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:8px 0 4px}
+.pickstk{background:rgba(6,0,20,.7);border:1px solid rgba(138,43,255,.55);border-radius:14px;padding:8px 4px;display:grid;place-items:center;cursor:pointer;transition:.16s;box-shadow:inset 0 0 18px rgba(0,229,255,.14)}
+.pickstk:hover{border-color:#00e5ff;box-shadow:0 0 22px -6px rgba(0,229,255,.9)}
+.pickstk img{pointer-events:none;filter:drop-shadow(0 0 12px rgba(255,47,185,.65))}
+.pickstk.right{border-color:#4dffb8;background:rgba(77,255,184,.14);box-shadow:0 0 24px -6px rgba(77,255,184,.9)}
+.pickstk.wrongpick{border-color:#ff3b5c;background:rgba(255,59,92,.12)}
+.pickstk.dim{opacity:.45}
+.shootq{font-family:var(--disp);font-size:clamp(15px,4.4vw,21px);letter-spacing:.05em;text-align:center;color:#fff;text-shadow:0 0 18px rgba(0,229,255,.85),0 0 30px rgba(255,47,185,.55)}
+.shootsub{text-align:center;font-size:11px;color:#a9b6d8;margin:2px 0 4px}
+.shootstage{position:relative;height:clamp(250px,42vh,340px);margin:8px 0 4px;border-radius:16px;overflow:hidden;border:1px solid rgba(138,43,255,.7);
+background:radial-gradient(ellipse 72% 62% at 50% 110%,rgba(138,43,255,.6),transparent 70%),linear-gradient(180deg,rgba(9,1,26,.96),rgba(26,2,56,.96));
+box-shadow:inset 0 0 46px rgba(255,47,185,.24),0 0 44px -16px rgba(0,229,255,.9)}
+.shootstage::before{content:'';position:absolute;inset:0;pointer-events:none;opacity:.6;
+background-image:linear-gradient(rgba(138,43,255,.4) 1px,transparent 1px),linear-gradient(90deg,rgba(138,43,255,.4) 1px,transparent 1px);
+background-size:30px 30px;transform:perspective(300px) rotateX(58deg);transform-origin:bottom}
+.beams{position:absolute;inset:0;pointer-events:none;z-index:8;overflow:visible}
+.cannon{position:absolute;left:50%;bottom:2px;transform:translateX(-50%);z-index:6;pointer-events:none;filter:drop-shadow(0 0 12px rgba(0,229,255,.9))}
+.tgt{position:absolute;border:0;background:none;padding:0;cursor:crosshair;transform:translate(-50%,-50%);animation:hover1 3.6s ease-in-out infinite;filter:drop-shadow(0 0 14px rgba(255,47,185,.9))}
+.tgt img{display:block;pointer-events:none}
+.tgt.dead{opacity:.18;filter:grayscale(1);pointer-events:none;animation:none}
+.tgt.hit{animation:hitpop .5s ease-out forwards}
+@keyframes hover1{0%,100%{transform:translate(-50%,-50%) translateY(-6px)}50%{transform:translate(-50%,-50%) translateY(7px)}}
+@keyframes hitpop{0%{transform:translate(-50%,-50%) scale(1)}55%{transform:translate(-50%,-50%) scale(1.4);filter:brightness(2.2)}100%{transform:translate(-50%,-50%) scale(.35);opacity:0}}
+.stickrow{position:absolute;inset:0}
+.stickcol{position:absolute;top:50%;transform:translate(-50%,-50%);width:clamp(52px,14%,74px);height:clamp(150px,62%,212px);border-radius:99px;cursor:crosshair;padding:8px 4px 18px;display:flex;align-items:flex-start;justify-content:center;
+border:2px solid rgba(0,229,255,.9);background:linear-gradient(180deg,rgba(0,229,255,.3),rgba(138,43,255,.52),rgba(255,47,185,.3));
+box-shadow:0 0 20px rgba(0,229,255,.85),inset 0 0 24px rgba(255,255,255,.35);transition:.15s}
+.stickcol:hover{box-shadow:0 0 30px rgba(0,229,255,1),inset 0 0 24px rgba(255,255,255,.5)}
+.stickcol b{font-family:var(--mono);font-size:10px;letter-spacing:.06em;color:#05000f;background:#00e5ff;border-radius:6px;padding:2px 4px;text-align:center;line-height:1.2;box-shadow:0 0 12px rgba(0,229,255,.95)}
+.stickcol small{position:absolute;bottom:6px;left:0;right:0;text-align:center;font-size:8px;color:#fff;opacity:.85;padding:0 2px}
+.stickcol.v2{border-color:rgba(255,47,185,.9);background:linear-gradient(180deg,rgba(255,47,185,.32),rgba(138,43,255,.5),rgba(0,229,255,.3));box-shadow:0 0 20px rgba(255,47,185,.9),inset 0 0 24px rgba(255,255,255,.32)}
+.stickcol.v2 b{background:#ff2fb9;color:#0b0018;box-shadow:0 0 12px rgba(255,47,185,.95)}
+.stickcol.v3{border-color:rgba(255,230,0,.9);background:linear-gradient(180deg,rgba(255,230,0,.3),rgba(255,138,0,.45),rgba(255,47,185,.32));box-shadow:0 0 20px rgba(255,230,0,.85),inset 0 0 24px rgba(255,255,255,.32)}
+.stickcol.v3 b{background:#ffe600;color:#221a00;box-shadow:0 0 12px rgba(255,230,0,.95)}
+.stickcol.v4{border-color:rgba(77,255,184,.9);background:linear-gradient(180deg,rgba(77,255,184,.3),rgba(0,229,255,.44),rgba(138,43,255,.34));box-shadow:0 0 20px rgba(77,255,184,.85),inset 0 0 24px rgba(255,255,255,.32)}
+.stickcol.v4 b{background:#4dffb8;color:#04140d;box-shadow:0 0 12px rgba(77,255,184,.95)}
+.stickcol.dead{opacity:.2;filter:grayscale(1);pointer-events:none}
+.shootfb{text-align:center;font-size:12.5px;margin-top:10px;color:#4dffb8}
+.shootfb.bad{color:#ff8fb0}
+@media print{
+.scanlines,.vhs,.floor,.stars,.gridwave,.neonbars,.noprint{display:none!important}
+body{background:#05000f!important}
+body::before{display:none}
+.wrap{padding:0;max-width:none}
+.cert{border-color:#ff2fb9;box-shadow:none}
+*{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+}
+@media(max-width:640px){.hud{font-size:9px}.sky{height:min(48vh,330px)}.tbl{font-size:9px}}
+</style>
+</head>
+<body class="notranslate">
+<div class="stars"></div>
+<div class="gridwave"></div>
+<div class="neonbars"></div>
+<div class="floor"></div>
+<div class="vhs"></div>
+<div class="scanlines"></div>
+<div class="wrap" id="app"></div>
+<script>
+(function(){"use strict";
+/* eslint-disable */
+/* Raw game script: neon sticker art cut from the Thailand sticker pack. Shared with every screen. */
+var ASSET_BASE = (typeof location !== 'undefined' && location.protocol === 'file:') ? 'assets/' : '/game-assets/';
+
+var STK = {
+  tiger:[132,116], buddha:[132,105], tuk_tuk:[132,129], elephant:[132,118], durian:[132,118],
+  temple:[132,118], pad_thai:[132,121], sticky_rice:[112,132], thai_tea:[105,132],
+  bangkok_sign:[132,123], boat:[132,89], palm:[132,118], hibiscus:[117,132], cat_cool:[132,123],
+  cat_dj:[132,117], cat_king:[132,117], cat_peace:[132,117], bubble_wow:[132,117], star:[132,123],
+  btn_play:[132,60], gear:[132,102], trophy:[132,118], medal:[132,118], crown:[123,106],
+  chest:[132,99], qmark:[132,80], gem:[132,115], coins:[132,117], flag:[132,108],
+  som_tum:[119,132], tom_yum:[132,87], mango:[114,132], coconut:[132,97], dog_cool:[122,132],
+  handheld:[129,132], headphones:[132,118], cassette:[132,118], motorbike:[132,89],
+  bubble_chat:[105,130], pin:[96,132], map_icon:[132,126], camera:[122,90], student_boy:[132,124],
+  mortar:[127,132], skytrain:[132,120], cat_sleep:[132,97], cat_ninja:[132,115],
+  student_thumb:[123,132], controller:[132,122]
+};
+
+function sticker(name,size,cls){
+  var d=STK[name]||STK2[name];
+  if(!d)return '';
+  var h=Math.round(size*d[1]/d[0]);
+  return '<img class="stk'+(cls?' '+cls:'')+'" src="'+ASSET_BASE+name+'.png" width="'+size+'" height="'+h+'" alt="" draggable="false">';
+}
+
+var WORDPIC={
+  "temple":"temple","boat":"boat","skytrain":"skytrain","elephant":"elephant","tuk tuk":"tuk_tuk",
+  "tiger":"tiger","flag":"flag","durian":"durian","mango":"mango","coconut":"coconut",
+  "noodles":"pad_thai","palm tree":"palm","night market":"bangkok_sign","market":"bangkok_sign",
+  "rice":"sticky_rice","tea":"thai_tea","salad":"som_tum","soup":"tom_yum","motorcycle":"motorbike",
+  "camera":"camera","headphones":"headphones","game console":"handheld","trophy":"trophy","crown":"crown",
+  "star":"star","gem":"gem","coin":"coins","map":"map_icon"
+};
+
+function stickerFor(word,size){
+  var n=WORDPIC[word];
+  return n?sticker(n,size||132,'prop'):'';
+}
+
+var CITYPIC={
+  bangkok:"tuk_tuk", ayutthaya:"temple", sukhothai:"buddha", chiangmai:"palm", khonkaen:"mortar",
+  kanchanaburi:"boat", pattaya:"coconut", phuket:"temple", krabi:"boat", hatyai:"motorbike",
+  nightcity:"skytrain"
+};
+
+/* [sticker, size, left%, top%, delay s, duration s] */
+var DECO=[
+  ["cat_cool",46,5,10,0,11], ["palm",56,84,6,2,14], ["gem",32,71,21,4,10], ["controller",40,11,29,1,13],
+  ["tuk_tuk",60,77,39,3,12], ["star",28,45,17,5,9], ["cassette",44,21,51,2,15], ["qmark",28,60,65,0,10],
+  ["boat",52,87,57,4,13], ["crown",36,7,69,1,12], ["headphones",40,67,81,3,14], ["hibiscus",36,33,83,5,11],
+  ["coins",32,52,39,2,9], ["bubble_wow",46,89,73,1,13], ["skytrain",54,3,44,4,15], ["dog_cool",44,39,5,0,12]
+];
+
+/* --- vapourwave pack (vb_) : new art for the OPINION ARENA unit --- */
+var STK2 = {
+  vb_tuktuk:[281,261], vb_bangkok:[385,118], vb_chonburi:[371,108], vb_arrow:[84,102],
+  vb_banana:[142,134], vb_boat:[255,195], vb_boss:[139,213], vb_boy:[220,204],
+  vb_car:[268,122], vb_cat:[175,150], vb_cobra:[216,213], vb_coconut:[132,146],
+  vb_coin:[81,84], vb_cute_girl:[189,206], vb_diamond:[76,80], vb_dog:[150,162],
+  vb_dragon:[338,253], vb_durian:[224,273], vb_elephant:[244,266], vb_false:[94,88],
+  vb_flag:[172,175], vb_flower:[148,153], vb_food_stall:[191,215], vb_football:[128,126],
+  vb_game_console:[134,159], vb_ghost:[150,125], vb_girl:[214,184], vb_hallelujah:[243,139],
+  vb_heart:[127,132], vb_helicopter:[274,158], vb_home:[142,118], vb_jet:[184,184],
+  vb_lantern:[60,111], vb_location:[100,126], vb_lotus:[150,140], vb_lucky:[104,128],
+  vb_mango:[155,159], vb_map_icon:[107,94], vb_medal:[114,138], vb_monster:[193,142],
+  vb_motorcycle:[155,159], vb_mountain:[118,133], vb_muay_thai:[182,136], vb_music:[141,123],
+  vb_palm_tree:[204,242], vb_plane:[191,143], vb_police_car:[121,102], vb_questionmark:[88,130],
+  vb_star:[140,150], vb_start:[148,144], vb_target:[96,94], vb_temple:[260,251],
+  vb_temple2:[296,264], vb_throphy:[170,126], vb_tiger:[203,275], vb_traffic_cone:[100,130],
+  vb_train:[166,172], vb_treasure:[177,128], vb_true:[116,82]
+};
+
+var CITYPIC2 = {
+  bkk2:"vb_bangkok", ayut2:"vb_temple", sukh2:"vb_temple2", cm2:"vb_palm_tree",
+  kk2:"vb_food_stall", pty2:"vb_boat", hkt2:"vb_tuktuk", nc2:"vb_dragon"
+};
+
+/* Every vapourwave sticker, in order: the map walks through the whole pack. */
+var VBALL=[
+ "vb_arrow","vb_banana","vb_bangkok","vb_boat","vb_boss","vb_boy","vb_car","vb_cat","vb_chonburi",
+ "vb_cobra","vb_coconut","vb_coin","vb_cute_girl","vb_diamond","vb_dog","vb_dragon","vb_durian",
+ "vb_elephant","vb_false","vb_flag","vb_flower","vb_food_stall","vb_football","vb_game_console",
+ "vb_ghost","vb_girl","vb_hallelujah","vb_heart","vb_helicopter","vb_home","vb_jet","vb_lantern",
+ "vb_location","vb_lotus","vb_lucky","vb_mango","vb_map_icon","vb_medal","vb_monster","vb_motorcycle",
+ "vb_mountain","vb_muay_thai","vb_music","vb_palm_tree","vb_plane","vb_police_car","vb_questionmark",
+ "vb_star","vb_start","vb_target","vb_temple","vb_temple2","vb_throphy","vb_tiger","vb_traffic_cone",
+ "vb_train","vb_treasure","vb_true","vb_tuktuk"];
+
+/* 18 floaters per arena, starting further along the pack for each stop. */
+function decoLayer(){
+  var cur=0;
+  for(var k=0;k<LOCS.length;k++){if(LOCS[k].id===selId)cur=k;}
+  var start=(cur*6)%VBALL.length;
+  var h='<div class="decowrap">';
+  for(var i=0;i<18;i++){
+    var n=VBALL[(start+i)%VBALL.length];
+    h+='<span class="deco" style="left:'+((i*41+13)%88)+'%;top:'+((i*29+7)%86)+'%;animation-delay:-'+(i%6)+'s;animation-duration:'+(9+i%7)+'s">'+sticker(n,30+(i%5)*6)+'</span>';
+  }
+  return h+'</div>';
+}
+/* eslint-disable */
+/* Raw game script: concatenated into the standalone offline build. Shares one closure with the other game parts. */
+var VOCAB=[["future","อนาคต"],["technology","เทคโนโลยี"],["smart city","เมืองอัจฉริยะ"],["transportation","การขนส่ง"],["robot","หุ่นยนต์"],["electric","ไฟฟ้า"],["energy","พลังงาน"],["design","ออกแบบ"],["building","อาคาร"],["system","ระบบ"],["innovation","นวัตกรรม"],["recycle","รีไซเคิล"],["solar","พลังงานแสงอาทิตย์"],["automatic","อัตโนมัติ"],["digital","ดิจิทัล"],["pollution","มลพิษ"],["green space","พื้นที่สีเขียว"],["high-tech","เทคโนโลยีขั้นสูง"],["connected","เชื่อมต่อ"],["network","เครือข่าย"],["environment","สิ่งแวดล้อม"],["underground","ใต้ดิน"],["traffic","การจราจร"],["solution","วิธีแก้ปัญหา"],["plan","แผน"],["architecture","สถาปัตยกรรม"],["climate","สภาพภูมิอากาศ"],["sustainable","ยั่งยืน"],["opinion","ความคิดเห็น"],["agree","เห็นด้วย"],["disagree","ไม่เห็นด้วย"],["because","เพราะว่า"],["idea","แนวคิด"],["debate","อภิปราย"],["history","ประวัติศาสตร์"],["ancient","โบราณ"],["discover","ค้นพบ"],["museum","พิพิธภัณฑ์"],["monument","อนุสรณ์สถาน"],["memory","ความทรงจำ"],["journey","การเดินทาง"],["adventure","การผจญภัย"],["temple","วัด"],["market","ตลาด"],["boat","เรือ"],["island","เกาะ"],["mountain","ภูเขา"],["beach","ชายหาด"],["forest","ป่า"],["festival","เทศกาล"],["tourist","นักท่องเที่ยว"],["delicious","อร่อย"],["spicy","เผ็ด"],["weather","อากาศ"],["celebrate","ฉลอง"],["river","แม่น้ำ"],["neon","นีออน"],["arcade","เกมอาร์เคด"],["hologram","ภาพโฮโลแกรม"],["cyber","ไซเบอร์"],["satellite","ดาวเทียม"],["chrome","โครเมียม"],["night market","ตลาดกลางคืน"],["skytrain","รถไฟฟ้า"],["signal","สัญญาณ"],["screen","หน้าจอ"]];
+
+var SENT=[["The ancient city has many monuments","เมืองโบราณมีอนุสรณ์สถานมากมาย"],["We should protect the environment","เราควรปกป้องสิ่งแวดล้อม"],["Smart cities use clean energy","เมืองอัจฉริยะใช้พลังงานสะอาด"],["Traffic is a big problem in Bangkok","การจราจรเป็นปัญหาใหญ่ในกรุงเทพ"],["I agree with your opinion","ฉันเห็นด้วยกับความคิดเห็นของคุณ"],["Technology can help us discover history","เทคโนโลยีช่วยเราค้นพบประวัติศาสตร์"],["Solar energy is good for the climate","พลังงานแสงอาทิตย์ดีต่อสภาพภูมิอากาศ"],["Every building should have a green space","ทุกอาคารควรมีพื้นที่สีเขียว"],["Chiang Mai has beautiful old temples","เชียงใหม่มีวัดเก่าที่สวยงาม"],["The train travels to the mountain","รถไฟเดินทางไปยังภูเขา"],["We visited an ancient temple at Ayutthaya","เราเยี่ยมชมวัดโบราณที่อยุธยา"],["The tourist loves spicy noodles","นักท่องเที่ยวชอบก๋วยเตี๋ยวเผ็ด"],["Night markets are full of neon lights","ตลาดกลางคืนเต็มไปด้วยไฟนีออน"],["The skytrain moves above the traffic","รถไฟฟ้าเคลื่อนที่เหนือการจราจร"],["Chiang Mai is cooler than Bangkok","เชียงใหม่เย็นกว่ากรุงเทพ"],["We should recycle plastic every day","เราควรนำพลาสติกกลับมาใช้ใหม่ทุกวัน"]];
+
+var EMOJIQ=[["🚗","car","รถยนต์"],["🐘","elephant","ช้าง"],["🍜","noodles","ก๋วยเตี๋ยว"],["🏥","hospital","โรงพยาบาล"],["🏫","school","โรงเรียน"],["🍦","ice cream","ไอศกรีม"],["⚽","football","ฟุตบอล"],["🐍","snake","งู"],["🐟","fish","ปลา"],["🌴","palm tree","ต้นมะพร้าว"],["🚂","train","รถไฟ"],["✈️","airplane","เครื่องบิน"],["🏝️","island","เกาะ"],["⛰️","mountain","ภูเขา"],["🌧️","rain","ฝน"],["🛺","tuk tuk","ตุ๊กตุ๊ก"],["🛕","temple","วัด"],["🚤","boat","เรือ"],["🚈","skytrain","รถไฟฟ้า"],["🐯","tiger","เสือ"],["🚩","flag","ธง"],["🍈","durian","ทุเรียน"],["🥭","mango","มะม่วง"],["🥥","coconut","มะพร้าว"]];
+
+var CODE=[
+ {th:"เมืองอัจฉริยะใช้พลังงานสะอาด",s:"Smart cities",v:"use",o:"clean energy"},
+ {th:"เราควรปกป้องสิ่งแวดล้อม",s:"We",v:"should protect",o:"the environment"},
+ {th:"ฉันเห็นด้วยกับความคิดเห็นของคุณ",s:"I",v:"agree with",o:"your opinion"},
+ {th:"พลังงานแสงอาทิตย์ดีต่อสภาพภูมิอากาศ",s:"Solar energy",v:"is good for",o:"the climate"},
+ {th:"ทุกอาคารควรมีพื้นที่สีเขียว",s:"Every building",v:"should have",o:"a green space"},
+ {th:"นักท่องเที่ยวชอบก๋วยเตี๋ยวเผ็ด",s:"The tourist",v:"loves",o:"spicy noodles"}
+];
+
+var LOCS=[
+{id:"bangkok",name:"BANGKOK",th:"กรุงเทพมหานคร",emoji:"🛺",g:"mc",lm:"watArun",x:311.2,y:494.8,region:"CENTRAL"},
+{id:"ayutthaya",name:"AYUTTHAYA",th:"พระนครศรีอยุธยา",emoji:"🛕",g:"sentence",lm:"chedi",x:316.5,y:450.8,region:"CENTRAL"},
+{id:"sukhothai",name:"SUKHOTHAI",th:"สุโขทัย",emoji:"🏛️",g:"anagram",lm:"lotus",x:251.6,y:256.6,region:"NORTH"},
+{id:"chiangmai",name:"CHIANG MAI",th:"เชียงใหม่",emoji:"🏯",g:"laser",lm:"doiSuthep",x:176,y:125.3,region:"NORTH"},
+{id:"khonkaen",name:"KHON KAEN",th:"ขอนแก่น",emoji:"🐂",g:"code",lm:"stupa",x:518.3,y:298.3,region:"ISAN"},
+{id:"kanchanaburi",name:"KANCHANABURI",th:"กาญจนบุรี",emoji:"🌉",g:"cable",lm:"bridge",x:224.9,y:475,region:"WEST"},
+{id:"pattaya",name:"PATTAYA",th:"พัทยา",emoji:"🏖️",g:"image",lm:"beach",x:344.9,y:554.9,region:"EAST"},
+{id:"phuket",name:"PHUKET",th:"ภูเก็ต",emoji:"🏝️",g:"type",lm:"bigBuddha",x:123.6,y:924.3,region:"SOUTH"},
+{id:"krabi",name:"KRABI",th:"กระบี่",emoji:"🚣",g:"match",lm:"karst",x:176,y:909.7,region:"SOUTH"},
+{id:"hatyai",name:"HAT YAI",th:"หาดใหญ่",emoji:"🕰️",g:"cable",lm:"clock",x:308.5,y:988.8,region:"SOUTH"},
+{id:"nightcity",name:"NIGHT CITY",th:"เมืองแสงไฟ",emoji:"🌃",g:"boss",lm:"skyline",x:222.3,y:1070.2,region:"FINAL"}
+];
+
+var INFO={
+mc:{title:"OPINION TRANSLATE",sub:"Multiple Choice",desc:"เลือกความหมายภาษาไทยของคำศัพท์การโต้วาที",max:1300},
+sentence:{title:"SENTENCE BUILD",sub:"Construct It",desc:"แตะคำเรียงเป็นประโยคอังกฤษให้ถูกต้อง",max:1500},
+anagram:{title:"LETTER SCRAMBLE",sub:"Anagram Attack",desc:"เรียงตัวอักษรกลับเป็นคำศัพท์ภาษาอังกฤษ",max:1700},
+laser:{title:"LASER DEFENDER",sub:"Arcade Shooter",desc:"เล็งปืนเลเซอร์ neon แล้วยิงคำแปลให้ถูก",max:1600},
+code:{title:"CODE RIDER",sub:"Syntax Build",desc:"เรียงบรรทัดโค้ดให้ถูกแล้วกด RUN เพื่อพิมพ์ประโยค",max:1300},
+cable:{title:"GRID CONNECT",sub:"Cable Puzzle",desc:"ต่อสายไฟจากคำอังกฤษไปยังช่องคำแปลไทย",max:1400},
+image:{title:"HOLO VISION",sub:"Picture Quiz",desc:"ดูภาพโฮโลแกรมแล้วตอบคำศัพท์ภาษาอังกฤษ",max:1300},
+type:{title:"TYPE ATTACK",sub:"Type Attack",desc:"พิมพ์คำศัพท์ภาษาอังกฤษให้ถูกต้อง",max:2200},
+match:{title:"SPEED MATCH",sub:"Speed Match",desc:"จับคู่คำอังกฤษกับคำแปลไทยให้ทันเวลา",max:1500},
+boss:{title:"FINAL BATTLE",sub:"Boss Challenge",desc:"ศึกสุดท้าย รวมทุกโหมด กดให้ทันเวลา!",max:2600},
+picture:{title:"NEON EVIDENCE",sub:"Picture Word Quiz",desc:"ดูภาพคำศัพท์การโต้วาที แล้วเลือกคำให้ถูกต้อง",max:1400},
+opinion:{title:"DEBATE DUEL",sub:"Opinion Builder",desc:"เลือกคำตอบที่ให้ความเห็นอย่างสุภาพและมีเหตุผล",max:1600},
+sticker:{title:"STICKER STORM",sub:"Sticker Quiz",desc:"ดูสติกเกอร์นีออนแล้วเลือกคำศัพท์ภาษาอังกฤษให้ถูก",max:1120},
+stklaser:{title:"STICKER LASER",sub:"Bonus Shooter",desc:"ยิงเลเซอร์ไปที่สติกเกอร์ที่ตรงกับคำศัพท์",max:1400},
+sticks:{title:"NEON STICKS",sub:"Bonus Shooter",desc:"อ่านคำถามแล้วยิงแท่งไฟนีออนที่ตอบถูก",max:1400}
+};
+
+var LM={"watArun":"M50 16 L53 22 L52 62 L48 62 L47 22 Z M36 40 L38 44 L37 62 L35 62 Z M64 40 L62 44 L63 62 L65 62 Z M28 62 L72 62 L72 68 L28 68 Z",
+"chedi":"M50 20 L52 27 L48 27 Z M46 27 C43 34 42 40 42 46 L42 58 L58 58 L58 46 C58 40 57 34 54 27 Z M32 34 L33.5 39 L30.5 39 Z M30 39 C28 44 27 48 27 53 L27 60 L37 60 L37 53 C37 48 36 44 34 39 Z M68 34 L69.5 39 L66.5 39 Z M66 39 C64 44 63 48 63 53 L63 60 L73 60 L73 53 C73 48 72 44 70 39 Z M24 60 L76 60 L76 66 L24 66 Z",
+"bridge":"M16 54 L84 54 L84 60 L16 60 Z M22 60 C28 42 72 42 78 60 L74 60 C70 46 30 46 26 60 Z M28 60 L31 60 L31 78 L28 78 Z M69 60 L72 60 L72 78 L69 78 Z M16 48 L84 48 L84 50 L16 50 Z",
+"beach":"M28 38 Q50 20 72 38 L66 40 Q50 26 34 40 Z M49 40 L51 40 L51 66 L49 66 Z M26 68 L74 68 L74 72 L26 72 Z M34 76 L66 76 L66 80 L34 80 Z",
+"stupa":"M46 16 L54 16 L54 24 L46 24 Z M42 24 L58 24 L58 30 L42 30 Z M38 32 L62 32 L62 40 L38 40 Z M34 42 L66 42 L66 50 L34 50 Z M30 52 L70 52 L70 60 L30 60 Z M26 62 L74 62 L74 70 L26 70 Z",
+"lotus":"M50 16 L52 24 L48 24 Z M50 24 C57 31 59 38 59 44 L59 52 L41 52 L41 44 C41 38 43 31 50 24 Z M38 52 L62 52 L62 60 L38 60 Z M32 60 L68 60 L68 70 L32 70 Z",
+"doiSuthep":"M18 70 L50 36 L82 70 Z M42 32 L50 22 L58 32 Z M50 14 L52 22 L48 22 Z",
+"bigBuddha":"M50 20 C54 20 57 23 57 27 C57 30 55 32 53 33 L47 33 C45 32 43 30 43 27 C43 23 46 20 50 20 Z M42 33 L58 33 L60 44 L63 54 L37 54 L40 44 Z M34 54 L66 54 L66 62 L34 62 Z M30 62 L70 62 L70 68 L30 68 Z",
+"karst":"M30 70 C31 46 36 32 42 22 C44 34 40 52 38 70 Z M52 70 C53 42 60 30 66 20 C69 32 62 52 60 70 Z M67 70 C68 56 72 48 76 42 C78 50 74 62 73 70 Z M18 72 L34 72 L32 78 L20 78 Z",
+"clock":"M50 24 L53 36 L47 36 Z M43 36 L57 36 L57 44 L43 44 Z M46 44 L54 44 L54 64 L46 64 Z M40 64 L60 64 L60 70 L40 70 Z",
+"skyline":"M22 70 L28 70 L28 46 L22 46 Z M32 70 L40 70 L40 38 L32 38 Z M44 70 L52 70 L52 52 L44 52 Z M56 70 L64 70 L64 34 L56 34 Z M68 70 L76 70 L76 48 L68 48 Z M60 34 L60 24 L61 24 L61 34 Z M18 70 L80 70 L80 76 L18 76 Z"};
+
+var OUTLINE="M106.7 73.3 L168.9 14.7 L284.5 7.3 L373.4 58.6 L400.1 183.3 L506.7 190.6 L586.7 373.8 L755.7 447.1 L746.8 483.8 L533.4 527.8 L480.1 608.4 L408.9 579.1 L346.7 520.4 L302.3 513.1 L257.8 623.1 L248.9 747.7 L275.6 842.9 L293.4 952.9 L320 1018.9 L248.9 1026.2 L115.6 952.9 L115.6 886.9 L133.4 769.7 L124.5 696.4 L151.1 608.4 L106.7 476.5 L44.5 293.2 L35.6 146.6 Z";
+
+/* Student portraits: the neon art each rider picks on the welcome screen. */
+var AVATARS=[
+ {n:"NEON GIRL",img:"av_1"},
+ {n:"GRID BOY",img:"av_2"},
+ {n:"CYBER CAT",img:"av_3"},
+ {n:"YAKSHA",img:"av_4"},
+ {n:"CHILL CAPY",img:"av_5"},
+ {n:"NEON TIGER",img:"av_6"}
+];
+
+var TIPS={
+general:["ขับไปให้ครบทุกเมือง! เมืองถัดไปจะปลดล็อกเมื่อผ่านเมืองปัจจุบัน","ตอบเร็วได้คะแนนโบนัส และสตรีคติดกันยิ่งได้เพิ่ม","3 ดาวคือการขับที่สมบูรณ์แบบ — เล่นซ้ำเพื่อทำลายสถิติเดิมได้","เก็บคะแนนให้ครบทุกอารีนา กด CERTIFICATE เพื่อดูรายงานได้ทุกเมื่อ","ไม่แน่ใจคำไหน ให้ดูรากศัพท์ก่อน เช่น -tion มักเป็นคำนาม"],
+sentence:["หาประธาน (Subject) ก่อน — ใครหรืออะไรทำกริยา? ในภาษาอังกฤษมักอยู่ต้นประโยค","ภาษาไทยเรียงคำต่างจากอังกฤษ อย่าแปลคำต่อคำ!","หากริยาให้เจอ: is / has / should มักอยู่หลังประธานทันที","ชื่อเมืองอย่าง Bangkok หรือ Chiang Mai เขียนเหมือนเดิมทั้งสองภาษา","อ่านประโยคที่เรียงเสร็จในใจช้า ๆ ถ้าฟังไม่ลื่น ให้ลองสลับคำใหม่","ประโยคยาวให้แบ่งกลุ่มก่อน: ประธาน + กริยา แล้วค่อยเติมส่วนขยาย"],
+anagram:["คำแปลไทยคือความหมาย — ค่อย ๆ ประกอบตัวอักษรอังกฤษกลับมา","ออกเสียงตัวอักษรที่แตะไปด้วย จะจำได้เร็วขึ้น","ติดขัดไหม? มองหาคำเล็ก ๆ ที่ซ่อนอยู่ หรืออักษรที่มักอยู่ด้วยกัน เช่น th, ch, ph"],
+code:["เริ่มจาก SET ประธาน → SET กริยา → SET กรรม แล้วปิดท้ายด้วย PRINT เสมอ","โปรแกรมจะพิมพ์ประโยคตามลำดับที่คุณวางบรรทัด ถ้าสลับ ผลลัพธ์จะอ่านไม่รู้เรื่อง","สังเกตคำในเครื่องหมายคำพูด — นั่นคือชิ้นส่วนประโยคที่แท้จริง"],
+cable:["เลือกคำอังกฤษทางซ้ายก่อน แล้วแตะช่องคำแปลไทยทางขวา","ระวังคำที่ความหมายใกล้กัน เช่น energy กับ electric — ดูบริบทให้ดี","ต่อผิดไม่เสียคะแนน แต่เสียเวลา เลือกให้ชัวร์ก่อนกด"],
+laser:["เล็งให้ตรงเรือที่มีคำแปลถูกต้อง แล้วยิงทันที","อย่าให้เรือที่ตรงกับเป้าหมายลอยหลุดจอ ไม่งั้นเสียหัวใจ","เรือบินเร็วขึ้นเรื่อย ๆ ยิ่งเลเวลสูงยิ่งต้องไว"]
+};
+
+var SAVE='vocabRiderNeon3';
+var state={name:'',avatar:0,stars:{},scores:{},created:0};
+try{var _raw=JSON.parse(localStorage.getItem(SAVE));if(_raw&&typeof _raw==='object'){state.name=_raw.name||'';state.avatar=_raw.avatar||0;state.stars=_raw.stars||{};state.scores=_raw.scores||{};state.created=_raw.created||0;state.artSeen=_raw.artSeen||[];state.stickSeen=_raw.stickSeen||[];}}catch(e){}
+function save(){try{localStorage.setItem(SAVE,JSON.stringify(state));}catch(e){}}
+
+var AC=null;
+function actx(){if(!AC){try{AC=new (window.AudioContext||window.webkitAudioContext)();}catch(e){return null;}}if(AC&&AC.state==='suspended'){try{AC.resume();}catch(e){}}return AC;}
+function tone(f,d,t,v){var c=actx();if(!c)return;try{var o=c.createOscillator(),g=c.createGain();o.type=t||'square';o.frequency.value=f;g.gain.setValueAtTime(v||0.16,c.currentTime);g.gain.exponentialRampToValueAtTime(0.01,c.currentTime+d);o.connect(g);g.connect(c.destination);o.start();o.stop(c.currentTime+d);}catch(e){}}
+var S={
+correct:function(){tone(523,.1);setTimeout(function(){tone(659,.1);},95);setTimeout(function(){tone(784,.15);},190);},
+wrong:function(){tone(200,.15,'sawtooth');setTimeout(function(){tone(150,.22,'sawtooth');},140);},
+level:function(){[392,440,494,523,587,659,784].forEach(function(f,i){setTimeout(function(){tone(f,.14,'square',.11);},i*70);});},
+warn:function(){tone(440,.09,'square',.18);setTimeout(function(){tone(440,.09,'square',.18);},190);},
+win:function(){[523,659,784,1047,784,659,523,659,784,1047].forEach(function(f,i){setTimeout(function(){tone(f,.17,'square',.11);},i*110);});},
+click:function(){tone(800,.045,'square',.07);},
+match:function(){tone(659,.1,'sine',.16);setTimeout(function(){tone(784,.14,'sine',.16);},95);},
+zap:function(){tone(1200,.05,'sawtooth',.12);setTimeout(function(){tone(400,.09,'sawtooth',.1);},50);},
+beam:function(){tone(1500,.06,'square',.1);setTimeout(function(){tone(600,.12,'sine',.09);},60);},
+plug:function(){tone(300,.06,'square',.14);setTimeout(function(){tone(900,.09,'sine',.1);},70);}};
+
+function shuffle(a){a=a.slice();for(var i=a.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var t=a[i];a[i]=a[j];a[j]=t;}return a;}
+function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+function cap(n){return n===LOCS.length-1?100:90;}
+function totalScore(){var m=unitLocIds(),t=0;for(var k in state.scores){if(state.scores.hasOwnProperty(k)&&m[k])t+=state.scores[k];}return t;}
+function doneCount(){var n=0;for(var i=0;i<LOCS.length;i++){if((state.stars[LOCS[i].id]||0)>0)n++;}return n;}
+function starCount(){var n=0;for(var i=0;i<LOCS.length;i++){n+=(state.stars[LOCS[i].id]||0);}return n;}
+function unlocked(i){return i===0||(state.stars[LOCS[i-1].id]||0)>=1;}
+function curIdx(){var f=0;for(var i=0;i<LOCS.length;i++){if((state.stars[LOCS[i].id]||0)>0)f=i;}return f;}
+function nextIdx(){var c=curIdx();for(var i=c;i<LOCS.length;i++){if(!(state.stars[LOCS[i].id]>0)&&unlocked(i))return i;}return c;}
+function rankOf(score){
+ if(score>=780)return 'GRID MASTER';
+ if(score>=520)return 'NEON ACE';
+ if(score>=260)return 'TUK TUK RIDER';
+ return 'CADET';
+}
+function pad2(n){return (n<10?'0':'')+n;}
+function today(){var d=new Date();return pad2(d.getDate())+'/'+pad2(d.getMonth()+1)+'/'+d.getFullYear();}
+
+function starsStr(n){var s='';for(var i=1;i<=3;i++)s+=i<=n?'★':'<span style="opacity:.22">★</span>';return s;}
+
+function logoSvg(l,size,withName){
+ var g='sun-'+l.id+'-'+size;
+ var lines=[56,63,70,77,84].map(function(y){return '<rect x="6" y="'+y+'" width="88" height="3" fill="#12001f"/>';}).join('');
+ var rim=withName?'':'';
+ var name=withName?'<text x="50" y="99" text-anchor="middle" fill="#ffe600" font-size="10" font-weight="700" letter-spacing="1.2" style="font-family:ui-monospace,monospace">'+l.name+'</text>':'';
+ return '<svg width="'+size+'" height="'+size+'" viewBox="0 0 100 100" style="overflow:visible">'
+ +'<defs><linearGradient id="'+g+'" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#ff2fb9"/><stop offset=".55" stop-color="#ff8a00"/><stop offset="1" stop-color="#ffe600"/></linearGradient></defs>'
+ +'<circle cx="50" cy="46" r="37" fill="url(#'+g+')" style="filter:drop-shadow(0 0 8px rgba(255,90,150,.85))"/>'
+ +lines+'<path d="'+LM[l.lm]+'" fill="#12001f"/>'+rim+name+'</svg>';
+}
+
+function carSvg(){
+ return '<svg width="34" height="16" viewBox="0 0 34 16" style="overflow:visible">'
+ +'<path d="M2 10 Q3 4 9 4 L23 4 Q29 4 31 10 L31 12 L2 12 Z" fill="#1a0030" stroke="#00e5ff" stroke-width="1.2"/>'
+ +'<path d="M9 4.6 L13 7.5 L24 7.5 L23 4.6 Z" fill="#ff2fb9" opacity=".9"/>'
+ +'<circle cx="8" cy="12.5" r="1.6" fill="#00e5ff"/><circle cx="25" cy="12.5" r="1.6" fill="#00e5ff"/>'
+ +'<path d="M1 11 L-6 11" stroke="#ff2fb9" stroke-width="1.4" opacity=".8"/>'
+ +'</svg>';
+}
+
+function avatarSvg(i,size){
+ var a=AVATARS[i]||AVATARS[0];
+ return '<span class="avimg" style="width:'+size+'px;height:'+size+'px">'
+  +'<img src="'+ASSET_BASE+a.img+'.png" width="'+size+'" height="'+size+'" alt="'+a.n+'" draggable="false">'
+  +'</span>';
+}
+
+function jetSvg(size){
+ return '<svg class="jetsvg" width="'+size+'" height="'+size+'" viewBox="0 0 120 120" style="overflow:visible">'
+ +'<defs><radialGradient id="jetglow" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#ff8a00" stop-opacity=".55"/><stop offset="1" stop-color="#ff8a00" stop-opacity="0"/></radialGradient></defs>'
+ +'<circle cx="60" cy="62" r="56" fill="url(#jetglow)"/>'
+ +'<path d="M60 10 L74 34 L46 34 Z" fill="#111" opacity=".45"/>'
+ +'<path d="M30 86 C22 96 24 106 30 112 C34 104 36 98 40 92 Z" fill="#c98a4b"/>'
+ +'<path d="M90 86 C98 96 96 106 90 112 C86 104 84 98 80 92 Z" fill="#c98a4b"/>'
+ +'<path d="M60 18 C34 18 20 36 20 58 C20 78 30 94 44 102 L38 112 L50 106 L60 110 L70 106 L82 112 L76 102 C90 94 100 78 100 58 C100 36 86 18 60 18 Z" fill="#d99a5c"/>'
+ +'<path d="M30 30 L24 8 L48 24 Z" fill="#d99a5c" stroke="#8a5423" stroke-width="1.6"/>'
+ +'<path d="M90 30 L96 8 L72 24 Z" fill="#d99a5c" stroke="#8a5423" stroke-width="1.6"/>'
+ +'<path d="M31 27 L28 15 L42 24 Z" fill="#ff9db1"/><path d="M89 27 L92 15 L78 24 Z" fill="#ff9db1"/>'
+ +'<path d="M33 40 L30 26 L40 33 Z" fill="#e8b06d"/><path d="M87 40 L90 26 L80 33 Z" fill="#e8b06d"/>'
+ +'<path d="M52 22 q4 6 0 10 M60 20 q4 7 0 12 M68 22 q-4 6 0 10" fill="none" stroke="#a86a2c" stroke-width="2.4" stroke-linecap="round" opacity=".85"/>'
+ +'<path d="M40 30 q6 4 4 10 M80 30 q-6 4 -4 10" fill="none" stroke="#a86a2c" stroke-width="2.2" stroke-linecap="round" opacity=".7"/>'
+ +'<ellipse cx="46" cy="58" rx="9" ry="9.6" fill="#fff8ec"/>'
+ +'<ellipse cx="74" cy="58" rx="9" ry="9.6" fill="#fff8ec"/>'
+ +'<circle cx="46" cy="58.5" r="6.6" fill="#7a4a22"/>'
+ +'<circle cx="74" cy="58.5" r="6.6" fill="#7a4a22"/>'
+ +'<circle cx="46" cy="58.5" r="4.4" fill="#4a2a10"/>'
+ +'<circle cx="74" cy="58.5" r="4.4" fill="#4a2a10"/>'
+ +'<ellipse cx="46" cy="58.5" rx="1.5" ry="3.6" fill="#140a04"/>'
+ +'<ellipse cx="74" cy="58.5" rx="1.5" ry="3.6" fill="#140a04"/>'
+ +'<circle cx="48" cy="55.5" r="1.7" fill="#fff" opacity=".95"/><circle cx="76" cy="55.5" r="1.7" fill="#fff" opacity=".95"/>'
+ +'<ellipse cx="46" cy="58.5" rx="7.4" ry="7.8" fill="none" stroke="#ffd98a" stroke-width="1.1" opacity=".8"/>'
+ +'<ellipse cx="74" cy="58.5" rx="7.4" ry="7.8" fill="none" stroke="#ffd98a" stroke-width="1.1" opacity=".8"/>'
+ +'<path d="M56 70 L60 75 L64 70 Z" fill="#ff8fab"/>'
+ +'<path d="M60 75 q-4 6 -9 4 M60 75 q4 6 9 4" fill="none" stroke="#7a4a12" stroke-width="2" stroke-linecap="round"/>'
+ +'<path d="M44 72 L20 66 M44 77 L20 80 M76 72 L100 66 M76 77 L100 80" stroke="#fff3dd" stroke-width="1.3" opacity=".85"/>'
+ +'<path d="M20 62 q10 2 18 6 M100 62 q-10 2 -18 6" fill="none" stroke="#b8783a" stroke-width="2" stroke-linecap="round" opacity=".6"/>'
+ +'<rect x="28" y="50" width="8" height="12" rx="3" fill="#0b1030" stroke="#00e5ff" stroke-width="1.4"/>'
+ +'<circle cx="32" cy="56" r="2" fill="#00e5ff"/>'
+ +'<path d="M36 52 L44 46" stroke="#00e5ff" stroke-width="1.4"/>'
+ +'<path d="M34 88 Q60 78 86 88" fill="none" stroke="#00e5ff" stroke-width="4.5" stroke-linecap="round" style="filter:drop-shadow(0 0 5px #00e5ff)"/>'
+ +'<rect x="50" y="87" width="20" height="12" rx="3" fill="#ffe600"/>'
+ +'<text x="60" y="96.5" text-anchor="middle" font-size="7.5" font-weight="bold" fill="#3a1d00" style="font-family:ui-monospace,monospace">JET</text>'
+ +'</svg>';
+}
+
+var jetTipIdx=0;
+function jetBox(tips,hint,hintBtnId,nextBtnId){
+ var text=hint||tips[jetTipIdx%tips.length];
+ var h='<div class="jetbox">'+jetSvg(48)+'<div class="jt"><p class="jetname">JET • CYBER CAT CO-PILOT 🐈‍⬛</p><p class="jettext">'+esc(text)+'</p>';
+ if(hintBtnId)h+='<button class="jetbtn" id="'+hintBtnId+'">JET, ช่วยด้วย!</button>';
+ if(nextBtnId)h+='<button class="jetbtn cy" id="'+nextBtnId+'">TIP ถัดไป</button>';
+ h+='</div></div>';
+ return h;
+}
+/* eslint-disable */
+/* OPINION ARENA — the one and only unit: debate vocabulary, sentence/structure drills
+   and the arenas. Shares one closure with the other game parts. */
+
+var VOCAB2 = [
+  ["opinion","ความคิดเห็น"],["agree","เห็นด้วย"],["disagree","ไม่เห็นด้วย"],["believe","เชื่อ"],
+  ["because","เพราะว่า"],["think","คิด"],["point","ประเด็น"],["idea","แนวคิด"],["side","ฝ่าย"],
+  ["issue","ประเด็นปัญหา"],["rule","กฎ"],["fair","ยุติธรรม"],["should","ควร"],["against","คัดค้าน"],
+  ["topic","หัวข้อ"],["reason","เหตุผล"],["support","สนับสนุน"],["agree with","เห็นด้วยกับ"],
+  ["respect","เคารพ"],["strong point","จุดแข็ง"],["weak point","จุดอ่อน"],["evidence","หลักฐาน"],
+  ["discuss","อภิปราย"],["solution","ทางออก"],["argue","โต้แย้ง"],["audience","ผู้ฟัง"],
+  ["conclusion","บทสรุป"],["persuade","โน้มน้าว"],["debate","การโต้วาที"],["shouldn't","ไม่ควร"]
+];
+
+var SENT2 = [
+  ["I think school uniforms should be required","ฉันคิดว่าเครื่องแบบนักเรียนควรบังคับ"],
+  ["In my opinion students should choose what to wear","ในความคิดของฉัน นักเรียนควรเลือกเองว่าจะใส่อะไร"],
+  ["I believe phones are useful for learning","ฉันเชื่อว่าโทรศัพท์มีประโยชน์ต่อการเรียน"],
+  ["We should listen to both sides","เราควรฟังทั้งสองฝ่าย"],
+  ["You shouldn't interrupt in a debate","คุณไม่ควรขัดจังหวะในการโต้วาที"],
+  ["Because it helps us express ourselves","เพราะมันช่วยให้เราแสดงความเป็นตัวเอง"],
+  ["That is a strong point","นั่นคือจุดแข็ง"],
+  ["We can allow phones with clear rules","เราเปิดให้ใช้โทรศัพท์ได้ถ้ามีกฎชัดเจน"]
+];
+
+var CODE2 = [
+  { th:"ฉันคิดว่านักเรียนควรเลือกเอง", s:"I think", v:"that students", o:"should choose" },
+  { th:"ในความคิดของฉัน นี่คือปัญหาใหญ่", s:"In my opinion", v:"this is", o:"a big issue" },
+  { th:"เราไม่ควรขัดจังหวะการโต้วาที", s:"We", v:"shouldn't interrupt", o:"the debate" },
+  { th:"ฉันเห็นด้วยเพราะมีหลักฐานชัดเจน", s:"I agree", v:"because there is", o:"clear evidence" },
+  { th:"เราควรฟังทั้งสองฝ่าย", s:"We", v:"should listen to", o:"both sides" }
+];
+
+/* One unit, ten arenas — every mini-game in the game appears once. */
+var LOCS2 = [
+  { id:"bkk2",  name:"BANGKOK",    th:"กรุงเทพมหานคร",  emoji:"🎤", g:"mc",      lm:"watArun",   x:330, y:505,  region:"STUDIO 1" },
+  { id:"ayut2", name:"AYUTTHAYA",  th:"พระนครศรีอยุธยา", emoji:"📷", g:"picture", lm:"chedi",     x:300, y:432,  region:"STUDIO 2" },
+  { id:"sukh2", name:"SUKHOTHAI",  th:"สุโขทัย",         emoji:"⚔️", g:"opinion", lm:"lotus",     x:262, y:300,  region:"DEBATE HALL" },
+  { id:"cm2",   name:"CHIANG MAI", th:"เชียงใหม่",       emoji:"🗣️", g:"sentence",lm:"doiSuthep", x:176, y:150,  region:"CAFE TALK" },
+  { id:"kk2",   name:"KHON KAEN",  th:"ขอนแก่น",         emoji:"🏫", g:"code",    lm:"stupa",     x:520, y:300,  region:"SCHOOL" },
+  { id:"pty2",  name:"PATTAYA",    th:"พัทยา",           emoji:"🌊", g:"match",   lm:"beach",     x:356, y:562,  region:"BEACH CLUB" },
+  { id:"hkt2",  name:"PHUKET",     th:"ภูเก็ต",          emoji:"🧠", g:"anagram", lm:"bigBuddha", x:128, y:900,  region:"BRAIN RING" },
+  { id:"krb2",  name:"KRABI",      th:"กระบี่",          emoji:"✨", g:"sticker", lm:"karst",     x:196, y:806,  region:"STICKER LAB" },
+  { id:"hty2",  name:"HAT YAI",    th:"หาดใหญ่",         emoji:"⌨️", g:"type",    lm:"clock",     x:306, y:962,  region:"TYPE PIT" },
+  { id:"nc2",   name:"NIGHT CITY", th:"เมืองแสงไฟ",      emoji:"👑", g:"boss",    lm:"skyline",   x:238, y:1050, region:"GRAND FINAL" }
+];
+
+var UNIT = 2;
+VOCAB = VOCAB2;
+SENT = SENT2;
+CODE = CODE2;
+LOCS = LOCS2;
+
+function unitLocIds() {
+  var m = {};
+  for (var i = 0; i < LOCS.length; i++) m[LOCS[i].id] = 1;
+  return m;
+}
+
+function maxTotal() {
+  var t = 0;
+  for (var i = 0; i < LOCS.length; i++) t += cap(i);
+  return t;
+}
+
+function citySticker(id, size) {
+  return sticker(CITYPIC2[id] || 'star', size);
+}
+
+/* Stops keep their own art, so the city card always shows a vapourwave sticker. */
+CITYPIC2.krb2 = 'vb_flower';
+CITYPIC2.hty2 = 'vb_train';
+/* eslint-disable */
+/* Raw game script: concatenated into the standalone offline build. Shares one closure with the other game parts. */
+var app=document.getElementById('app');
+var T=null;
+function clearT(){if(T){clearInterval(T);T=null;}}
+
+function hud(loc,score,right){
+ return '<div class="hud"><span class="c">'+loc.emoji+' '+loc.name+'</span><span class="s">SCORE '+score+'</span><span class="r">'+right+'</span></div>';
+}
+function pbar(p){return '<div class="pbar" style="margin:8px 0 14px"><i style="width:'+Math.round(p)+'%"></i></div>';}
+function clockHtml(t,crit){return '<span id="clock" style="color:'+(t<=crit?'#ff3b5c':'#ffe600')+'">TIME '+t+'s</span>';}
+
+function vWelcome(){
+ var pick=state.avatar||0;
+ var tiles='';
+ AVATARS.forEach(function(a,i){
+  tiles+='<button class="avtile'+(i===pick?' on':'')+'" data-av="'+i+'">'+avatarSvg(i,44)+'<span>'+a.n+'</span></button>';
+ });
+ app.innerHTML='<div class="boot">'
+ +'<div>'
+ +'<p class="kicker">MATTHAYOM 4 • FINAL TEST REVISION</p>'
+ +'<h1 class="logo"><span class="chrome">VOCAB</span><br><span class="chrome">RIDER</span></h1>'
+ +'<div style="display:flex;gap:4px;margin-top:6px;align-items:center">'+sticker('vb_jet',44)+sticker('vb_dragon',42)+sticker('vb_boy',42)+sticker('vb_girl',42)+sticker('vb_cat',40)+sticker('vb_dog',38)+sticker('vb_monster',40)+'</div>'
+ +'<p class="th-sub">อารีนาโต้วาทีกลางกรุงเทพปี 20XX • เก็บคำศัพท์การแสดงความคิดเห็นให้ครบทุกด่าน</p>'
+ +'<div class="scanner" style="width:220px;margin:16px 0"><i></i></div>'
+ +'<p class="mono dim" style="font-size:9px;letter-spacing:.2em">OPINION ARENA • '+LOCS.length+' ARENAS • OFFLINE READY</p>'
+ +'<div class="panel" style="margin-top:16px">'
+ +'<label class="lbl">ชื่อผู้ขับ / DRIVER NAME</label>'
+ +'<input id="name" maxlength="20" placeholder="พิมพ์ชื่อของคุณ..." value="'+esc(state.name||'')+'">'
+ +'<button class="btn big pink" id="go" style="margin-top:12px">START ENGINE ▸</button>'
+ +'</div>'
+ +'<p class="tiny" style="margin-top:12px">ทุกอย่างทำงานแบบออฟไลน์ 100% • ดาวน์โหลด ZIP ได้จากหน้าแรก</p>'
+ +'</div>'
+ +'<div>'
+ +'<div class="panel"><p class="lbl">เลือกอวตาร / PICK YOUR RIDER</p>'
+ +'<div class="avbig" id="avbig">'+avatarSvg(pick,118)+'</div>'
+ +'<p class="mono" id="avname" style="text-align:center;font-size:9px;letter-spacing:.24em;color:#4dffb8;margin-bottom:8px">'+AVATARS[pick].n+'</p>'
+ +'<div class="avgrid">'+tiles+'</div></div>'
+ +jetBox(TIPS.general,null,null,'jetnext')
+ +'</div></div>';
+
+ var btns=app.querySelectorAll('[data-av]');
+ for(var i=0;i<btns.length;i++){
+  btns[i].onclick=function(){
+   var idx=parseInt(this.getAttribute('data-av'),10);
+   pick=idx;state.avatar=idx;save();S.click();
+   var all=app.querySelectorAll('[data-av]');
+   for(var k=0;k<all.length;k++){all[k].className='avtile'+(parseInt(all[k].getAttribute('data-av'),10)===idx?' on':'');}
+   document.getElementById('avbig').innerHTML=avatarSvg(idx,118);
+   document.getElementById('avname').textContent=AVATARS[idx].n;
+  };
+ }
+ document.getElementById('go').onclick=function(){
+  var n=(document.getElementById('name').value||'').trim();
+  if(!n){S.wrong();document.getElementById('name').focus();return;}
+  state.name=n;state.avatar=pick;if(!state.created)state.created=Date.now();
+  save();S.level();selId=LOCS[curIdx()].id;vMap();
+ };
+ document.getElementById('name').onkeydown=function(e){if(e.key==='Enter')document.getElementById('go').click();};
+ var jn=document.getElementById('jetnext');
+ if(jn)jn.onclick=function(){jetTipIdx++;vWelcome();};
+}
+
+/* ---------- MAP ---------- */
+var selId='bangkok';
+
+function mapSvg(){
+ var cur=curIdx(),nx=nextIdx();
+ var traveled=LOCS.slice(0,cur+1);
+ var h='<svg viewBox="0 0 800 1100" preserveAspectRatio="none" style="position:absolute;inset:0;width:100%;height:100%;z-index:0">';
+ h+='<defs>'
+ +'<linearGradient id="sea" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#02000c"/><stop offset=".5" stop-color="#0a0524"/><stop offset="1" stop-color="#150233"/></linearGradient>'
+ +'<linearGradient id="land" x1="0" y1="0" x2=".35" y2="1"><stop offset="0" stop-color="#3a0a63"/><stop offset=".45" stop-color="#1b0538"/><stop offset="1" stop-color="#0b0124"/></linearGradient>'
+ +'<linearGradient id="routeG" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffe600"/><stop offset="1" stop-color="#ff2fb9"/></linearGradient>'
+ +'<radialGradient id="halo" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#8a2bff" stop-opacity=".85"/><stop offset=".45" stop-color="#ff2fb9" stop-opacity=".38"/><stop offset="1" stop-color="#00e5ff" stop-opacity="0"/></radialGradient>'
+ +'<radialGradient id="sunburst" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#ffe600" stop-opacity=".55"/><stop offset=".6" stop-color="#ff2fb9" stop-opacity=".22"/><stop offset="1" stop-color="#8a2bff" stop-opacity="0"/></radialGradient>'
+ +'<clipPath id="landClip"><path d="'+OUTLINE+'"/></clipPath>'
+ +'</defs>';
+ h+='<rect width="800" height="1100" fill="url(#sea)"/>';
+ var w='';for(var i=0;i<26;i++){var y=40+i*44;w+='<path d="M20 '+y+' q60 -16 120 0 t120 0 t120 0 t120 0" fill="none" stroke="rgba(0,229,255,'+(0.05+(i%3)*0.022)+')" stroke-width="1"/>';}
+ h+='<g opacity=".55">'+w+'</g>';
+ h+='<path d="'+OUTLINE+'" fill="none" stroke="#8a2bff" stroke-width="12" opacity=".38" style="filter:blur(7px)"/>';
+ h+='<path d="'+OUTLINE+'" fill="url(#land)" stroke="#ff2fb9" stroke-width="2.5" style="filter:drop-shadow(0 0 12px rgba(255,47,185,.85))"/>';
+ h+='<g clip-path="url(#landClip)" opacity=".85">';
+ var g='';for(var x=0;x<=800;x+=40)g+='<line x1="'+x+'" y1="0" x2="'+x+'" y2="1100" stroke="rgba(0,229,255,.16)" stroke-width="1"/>';
+ for(var y2=0;y2<=1100;y2+=40)g+='<line x1="0" y1="'+y2+'" x2="800" y2="'+y2+'" stroke="rgba(255,47,185,.12)" stroke-width="1"/>';
+ /* vapourwave major grid — purple strokes with their own glow */
+ var gp='';
+ for(var gx=0;gx<=800;gx+=160)gp+='<line x1="'+gx+'" y1="0" x2="'+gx+'" y2="1100" stroke="rgba(138,43,255,.78)" stroke-width="2.6" style="filter:drop-shadow(0 0 7px rgba(138,43,255,.95))"/>';
+ for(var gy=0;gy<=1100;gy+=160)gp+='<line x1="0" y1="'+gy+'" x2="800" y2="'+gy+'" stroke="rgba(138,43,255,.78)" stroke-width="2.6" style="filter:drop-shadow(0 0 7px rgba(138,43,255,.95))"/>';
+ g+=gp;
+ g+='<circle cx="380" cy="560" r="300" fill="rgba(0,229,255,.05)"/>';
+ g+='<circle cx="380" cy="560" r="300" fill="none" stroke="rgba(138,43,255,.55)" stroke-width="2.4" stroke-dasharray="14 12"/>';
+ g+='<circle cx="380" cy="560" r="196" fill="none" stroke="rgba(255,47,185,.45)" stroke-width="1.8" stroke-dasharray="6 10"/>';
+ g+='<circle cx="380" cy="560" r="420" fill="none" stroke="rgba(0,229,255,.28)" stroke-width="1.6"/>';
+ g+='<circle cx="380" cy="560" r="150" fill="url(#sunburst)" opacity=".35"/>';
+ h+=g+'</g>';
+ h+='<path d="'+OUTLINE+'" fill="none" stroke="#00e5ff" stroke-width="1" opacity=".55"/>';
+ h+='<path d="'+OUTLINE+'" fill="none" stroke="#ffe600" stroke-width=".8" opacity=".3" stroke-dasharray="3 9"/>';
+ var all=LOCS.map(function(l){return l.x+','+l.y;}).join(' ');
+ h+='<polyline points="'+all+'" fill="none" stroke="rgba(143,158,196,.35)" stroke-width="2.5" stroke-dasharray="4 12"/>';
+ /* neon light pools under every city */
+ var halo='';
+ LOCS.forEach(function(l){
+  halo+='<circle cx="'+l.x+'" cy="'+l.y+'" r="58" fill="url(#halo)" opacity=".5"/>';
+  halo+='<circle cx="'+l.x+'" cy="'+l.y+'" r="26" fill="none" stroke="rgba(0,229,255,.45)" stroke-width="1.4"/>';
+ });
+ h+=halo;
+ h+='<g opacity=".5">';
+ h+='<path d="M60 900 L740 760" stroke="rgba(138,43,255,.45)" stroke-width="26" stroke-linecap="round" style="filter:blur(16px)"/>';
+ h+='<path d="M90 300 L700 210" stroke="rgba(0,229,255,.32)" stroke-width="18" stroke-linecap="round" style="filter:blur(14px)"/>';
+ h+='</g>';
+ if(traveled.length>1){
+  h+='<polyline points="'+traveled.map(function(l){return l.x+','+l.y;}).join(' ')+'" fill="none" stroke="url(#routeG)" stroke-width="3.6" stroke-linecap="round" style="filter:drop-shadow(0 0 7px rgba(255,230,0,.9))"/>';
+ }
+ if(nx>cur){
+  var a=LOCS[cur],b=LOCS[nx];
+  h+='<line x1="'+a.x+'" y1="'+a.y+'" x2="'+b.x+'" y2="'+b.y+'" stroke="#00e5ff" stroke-width="3" stroke-dasharray="10 8" class="glowline" style="filter:drop-shadow(0 0 7px #00e5ff)"/>';
+ }
+ h+='<text x="560" y="700" fill="rgba(0,229,255,.28)" font-size="13" letter-spacing="4" font-family="ui-monospace,monospace" transform="rotate(72 560 700)">GULF OF THAILAND</text>';
+ h+='<text x="404" y="1060" fill="rgba(255,47,185,.22)" font-size="46" letter-spacing="10" font-weight="700" font-family="Arial Black,sans-serif">THAILAND</text>';
+ h+='<text x="60" y="230" fill="rgba(255,230,0,.35)" font-size="10" letter-spacing="4" font-family="ui-monospace,monospace">NORTH</text>';
+ h+='<text x="560" y="250" fill="rgba(255,230,0,.35)" font-size="10" letter-spacing="4" font-family="ui-monospace,monospace">ISAN</text>';
+ h+='<text x="70" y="1010" fill="rgba(255,230,0,.35)" font-size="10" letter-spacing="4" font-family="ui-monospace,monospace">SOUTH</text>';
+ h+='</svg>';
+ return h;
+}
+
+function vMap(){
+ clearT();
+ var cur=curIdx(),nx=nextIdx(),total=totalScore();
+ var h='<div class="topbar">'
+ +'<div class="brand"><span class="chrome">VOCAB RIDER</span><small>OPINION ARENA • OFFLINE</small></div>'
+ +'<div class="stats">'
+ +'<div class="stat"><span>SCORE</span><b>'+total+'<i>/'+maxTotal()+'</i></b></div>'
+ +'<div class="stat"><span>CITIES</span><b>'+doneCount()+'<i>/'+LOCS.length+'</i></b></div>'
+ +'<div class="stat"><span>STARS</span><b>'+starCount()+'<i>/'+(LOCS.length*3)+'</i></b></div>'
+ +'</div>'
+ +'<div class="who">'+avatarSvg(state.avatar||0,34)+'<div><b>'+esc(state.name)+'</b><span>'+rankOf(total)+'</span></div></div>'
+ +'</div>';
+
+ h+='<div class="mapgrid"><div>';
+ h+='<div class="map" id="map">'+mapSvg();
+
+ // flying cars
+ var cars=[{t:'12%',d:'16s',dl:'0s',s:.9},{t:'26%',d:'22s',dl:'-6s',s:.65},{t:'58%',d:'19s',dl:'-11s',s:.8},{t:'78%',d:'26s',dl:'-3s',s:.55}];
+ cars.forEach(function(c){
+  h+='<div class="fly" style="top:'+c.t+';left:0;animation-duration:'+c.d+';animation-delay:'+c.dl+';transform:scale('+c.s+')">'+carSvg()+'</div>';
+ });
+ h+=decoLayer();
+ // nodes
+ LOCS.forEach(function(l,i){
+  var open=unlocked(i),done=(state.stars[l.id]||0)>0;
+  var ring='';
+  if(l.id===selId)ring='<span class="ring sel"></span>';
+  else if(done)ring='<span class="ring done"></span>';
+  var size=(i===cur)?54:44;
+  var lock=open?'':'<span class="lockb">🔒</span>';
+  h+='<button class="node'+(open?'':' lock')+'" data-id="'+l.id+'" style="left:'+(l.x/8)+'%;top:'+(l.y/11)+'%">'
+   +'<span style="position:relative;display:block">'+logoSvg(l,size,false)+ring+lock+'</span>'
+   +'<span class="nm">'+l.name+'</span></button>';
+ });
+ // avatar marker
+ var me=LOCS[cur];
+ h+='<div class="me" style="left:'+(me.x/8)+'%;top:'+(me.y/11-4.6)+'%">'+avatarSvg(state.avatar||0,34)+'<span class="tag">'+esc((state.name||'YOU').slice(0,8))+'</span></div>';
+ // next beacon
+ if(nx>cur){
+  var n2=LOCS[nx];
+  h+='<div style="position:absolute;left:'+(n2.x/8)+'%;top:'+(n2.y/11+5.2)+'%;transform:translateX(-50%);font-family:ui-monospace,monospace;font-size:6.5px;letter-spacing:.16em;color:#00e5ff;background:rgba(0,0,0,.7);border:1px solid rgba(0,229,255,.6);border-radius:4px;padding:1px 5px;white-space:nowrap;z-index:4">NEXT ▸</div>';
+ }
+ h+='<div class="ov"></div>';
+ h+='<div class="marq"><span>★ NIGHT CITY 20XX ★ ๑๑ เมืองไทย ★ ARCADE NEON RIDE ★ JET THE CYBER CAT ★ คะแนนเต็ม 1000 ★ CERTIFICATE พร้อมพิมพ์ ★ OFFLINE 100% ★ NIGHT CITY 20XX ★ ๑๑ เมืองไทย ★ ARCADE NEON RIDE ★ JET THE CYBER CAT ★ คะแนนเต็ม 1000 ★ CERTIFICATE พร้อมพิมพ์ ★ OFFLINE 100% ★</span></div>';
+ h+='</div>';
+
+ h+='<div class="row" style="margin-top:10px">'
+ +'<button class="btn pink" id="cert">🎓 CERTIFICATE</button>'
+ +'<button class="btn ghost" id="zip">⬇ OFFLINE ZIP</button>'
+ +'</div>';
+ h+='</div>';
+
+ // side panel
+ var sel=null,si=0;
+ LOCS.forEach(function(l,i){if(l.id===selId){sel=l;si=i;}});
+ if(!sel){sel=LOCS[0];si=0;selId=sel.id;}
+ var open=unlocked(si),info=INFO[sel.g],capv=cap(si);
+ h+='<div>';
+ h+='<div class="panel citycard">'
+ +'<div class="cityhead"><div style="display:flex;flex-direction:column;align-items:center;gap:2px">'+logoSvg(sel,58,false)+citySticker(sel.id,40)+'</div><div style="min-width:0">'
+ +'<h2>'+sel.emoji+' '+sel.name+'</h2><p class="th">'+sel.th+' • '+sel.region+'</p>'
+ +'<p class="stars">'+starsStr(state.stars[sel.id]||0)+'</p>'
+ +'</div><div style="margin-left:auto;text-align:right"><span class="lbl" style="margin:0">BEST</span><b class="mono" style="color:#ffe600;font-size:15px">'+(state.scores[sel.id]||0)+'<i style="color:#8f9ec4;font-size:10px;font-style:normal">/'+capv+'</i></b></div></div>'
+ +'<p class="mode">'+info.title+' <em>— '+info.sub+'</em></p>'
+ +'<p class="desc">'+info.desc+'</p>';
+ if(open){
+  h+='<button class="btn" id="play" style="margin-top:12px">'+(state.stars[sel.id]?'DRIVE AGAIN ▸':'START MISSION ▸')+'</button>';
+ }else{
+  h+='<div class="locked-note">🔒 ผ่าน '+LOCS[si-1].name+' ก่อนเพื่อปลดล็อก</div>';
+ }
+ h+='</div>';
+ h+=jetBox(TIPS.general,null,null,'jetnext');
+ h+='<div class="panel" style="margin-top:12px"><p class="lbl">ทางของ Jet</p><p class="desc">แตะเมืองบนแผนที่เพื่อดูภารกิจ • อวตารของคุณคือจุดที่คุณยืนอยู่ตอนนี้ และเส้นประสีฟ้าคือเมืองถัดไป</p><button class="btn ghost" id="reset" style="margin-top:10px;font-size:10px;padding:9px">NEW RIDER (ล้างข้อมูล)</button></div>';
+ h+='</div></div>';
+ app.innerHTML=h;
+
+ var nodes=app.querySelectorAll('.node');
+ for(var k=0;k<nodes.length;k++){nodes[k].onclick=function(){selId=this.getAttribute('data-id');S.click();vMap();};}
+ var play=document.getElementById('play');
+ if(play)play.onclick=function(){S.level();vIntro(sel);};
+ var jn=document.getElementById('jetnext');
+ if(jn)jn.onclick=function(){jetTipIdx++;vMap();};
+ document.getElementById('cert').onclick=function(){S.click();vCert();};
+ document.getElementById('zip').onclick=function(){S.click();askZip();};
+ document.getElementById('reset').onclick=function(){
+  if(window.confirm('ล้างข้อมูลนักขับทั้งหมด? คะแนนและดาวจะหายไป')){try{localStorage.removeItem(SAVE);}catch(e){}state={name:'',avatar:0,stars:{},scores:{},created:0,artSeen:[],stickSeen:[]};selId=LOCS[0].id;vWelcome();}
+ };
+}
+
+function askZip(){
+ if(window.parent&&window.parent!==window){
+  try{window.parent.postMessage({type:'vocabrider-zip'},'*');S.correct();return;}catch(e){}
+ }
+ window.alert('ดาวน์โหลดไฟล์ ZIP ได้จากหน้านอกเกม (หน้าแรกของแอป) — เกมนี้ทำงานออฟไลน์ได้ 100% เมื่อดาวน์โหลดแล้ว');
+}
+
+function vIntro(loc){
+ bonusMode=rollBonus();
+ var info=INFO[bonusMode||loc.g];
+ app.innerHTML='<div style="max-width:520px;margin:0 auto;padding:26px 0;text-align:center">'
+ +logoSvg(loc,104,true)
+ +'<div style="margin-top:8px">'+citySticker(loc.id,56)+'</div>'
+ +'<p class="kicker" style="margin-top:14px">ARRIVING AT '+loc.name+' • '+loc.th+'</p>'
+ +(bonusMode?'<p class="kicker" style="color:#ff2fb9;margin-top:6px">BONUS ROUND ▸ '+info.title+'</p>':'')
+ +'<h2 class="chrome" style="font-family:var(--disp);font-size:clamp(22px,6vw,34px);letter-spacing:.06em;margin:8px 0">'+info.title+'</h2>'
+ +'<p style="color:#00e5ff;font-size:14px">'+info.sub+'</p>'
+ +'<p class="desc" style="max-width:360px;margin:6px auto 0">'+info.desc+'</p>'
+ +'<div class="pbar" style="width:220px;margin:20px auto 0"><i id="ibar" style="width:0;transition:width 2.4s linear"></i></div></div>';
+ setTimeout(function(){var b=document.getElementById('ibar');if(b)b.style.width='100%';},60);
+ setTimeout(function(){vGame(loc);},2600);
+}
+
+var runKey=null,bonusMode=null;
+function rollBonus(){
+ var r=Math.random();
+ if(r<0.16)return 'stklaser';
+ if(r<0.32)return 'sticks';
+ return null;
+}
+function vGame(loc){
+ clearT();
+ var g=bonusMode||loc.g;
+ runKey=g;
+ if(g==='stklaser'){gStickerLaser(loc);return;}
+ if(g==='sticks'){gSticks(loc);return;}
+ if(g==='mc')gMC(loc);
+ else if(g==='match')gMatch(loc);
+ else if(g==='type')gType(loc);
+ else if(g==='sentence')gSentence(loc);
+ else if(g==='anagram')gAnagram(loc);
+ else if(g==='image')gImage(loc);
+ else if(g==='laser')gLaser(loc);
+ else if(g==='cable')gCable(loc);
+ else if(g==='code')gCode(loc);
+ else if(g==='picture')gPicture(loc);
+ else if(g==='opinion')gOpinion(loc);
+ else if(g==='sticker')gSticker(loc);
+ else gBoss(loc);
+}
+
+function finish(loc,raw){
+ clearT();
+ var key=runKey||loc.g;
+ var capv=cap(LOCS.indexOf(loc));
+ var maxRaw=INFO[key].max;
+ var pct=Math.max(0,Math.min(1,raw/maxRaw));
+ var sc=Math.round(pct*capv);
+ var st=sc>=Math.round(capv*0.72)?3:sc>=Math.round(capv*0.42)?2:1;
+ state.scores[loc.id]=Math.max(state.scores[loc.id]||0,sc);
+ state.stars[loc.id]=Math.max(state.stars[loc.id]||0,st);
+ save();
+ S.win();
+ var nextL=LOCS[Math.min(LOCS.indexOf(loc)+1,LOCS.length-1)];
+ app.innerHTML='<div class="panel" style="max-width:440px;margin:26px auto;text-align:center">'
+ +logoSvg(loc,92,true)
+ +'<p class="kicker" style="margin-top:12px">MISSION COMPLETE • '+INFO[key].title+'</p>'
+ +'<h1 class="chrome" style="font-family:var(--disp);font-size:26px;letter-spacing:.05em;margin:6px 0">'+loc.emoji+' '+loc.name+'</h1>'
+ +'<div class="scanner" style="width:180px;margin:12px auto"><i></i></div>'
+ +'<div style="margin-top:8px">'+(st>=3?sticker('trophy',88):st===2?sticker('medal',88):sticker('star',80))+'</div>'
+ +'<p class="lbl" style="margin-top:16px">LEVEL SCORE</p>'
+ +'<h2 class="mono" style="font-size:44px;color:#fff;text-shadow:0 0 24px rgba(0,229,255,.6)">'+sc+'<span style="font-size:16px;color:#8f9ec4">/'+capv+'</span></h2>'
+ +'<p class="stars" style="font-size:26px;margin:6px 0">'+starsStr(st)+'</p>'
+ +'<p class="desc">'+(st>=3?'การขับที่สมบูรณ์แบบ!':st===2?'ดีมาก ขับได้ลื่น!':'ผ่านแล้ว — ลองขับซ้ำเพื่อเก็บดาวให้ครบ')+'</p>'
+ +'<div class="stat" style="margin:14px auto 0;display:inline-block"><span>TOTAL</span><b>'+totalScore()+'<i>/'+maxTotal()+'</i></b></div>'
+ +'<button class="btn" id="back" style="margin-top:16px">BACK TO MAP ▸</button>'
+ +jetBox(TIPS.general,null,null,'jr')
+ +'</div>';
+ document.getElementById('back').onclick=function(){selId=nextL.id;vMap();};
+ var jr=document.getElementById('jr');
+ if(jr)jr.onclick=function(){jetTipIdx++;finish(loc,raw);};
+}
+
+/* ---------- CERTIFICATE ---------- */
+function vCert(){
+ var total=totalScore(),dc=doneCount(),sw=starCount();
+ var h='<div class="noprint topbar"><div class="brand"><span class="chrome">ผลการเรียน / REPORT</span></div>'
+ +'<div class="row" style="flex:0 0 auto"><button class="btn ghost" id="back" style="min-width:120px">◂ BACK TO MAP</button><button class="btn pink" id="pr" style="min-width:180px">🖨 PRINT / SAVE PDF</button></div></div>';
+
+ h+='<div class="cert"><p class="kicker" style="text-align:center">VOCAB RIDER • OPINION ARENA</p>'
+ +'<h1 class="chrome">CERTIFICATE</h1>'
+ +'<p class="th-sub" style="text-align:center;margin-top:4px">ใบรับรองการผ่านภารกิจคำศัพท์ภาษาอังกฤษ</p>'
+ +'<div style="display:flex;justify-content:center;margin:12px 0 2px">'+avatarSvg(state.avatar||0,84)+'</div>'
+ +'<p style="text-align:center;font-size:11px;color:#8f9ec4">ขอมอบให้กับ</p>'
+ +'<div class="certname">'+esc(state.name||'DRIVER')+'</div>'
+ +'<p class="certline">ผ่านภารกิจทั้งหมด <b>'+dc+'/'+LOCS.length+'</b> ด่าน &nbsp;•&nbsp; คะแนนรวม <b>'+total+'/'+maxTotal()+'</b> &nbsp;•&nbsp; ดาว <b>'+sw+'/'+(LOCS.length*3)+'</b></p>'
+ +'<p style="text-align:center"><span class="rank">'+rankOf(total)+'</span></p>';
+
+ h+='<table class="tbl"><thead><tr><th>#</th><th>เมือง / CITY</th><th>โหมด / MODE</th><th class="n">คะแนน</th><th class="n">ดาว</th></tr></thead><tbody>';
+ LOCS.forEach(function(l,i){
+  var s=state.scores[l.id]||0,st=state.stars[l.id]||0,cp=cap(i);
+  var mis=st>0?'':' class="mis"';
+  h+='<tr'+mis+'><td>'+(i+1)+'</td><td>'+l.emoji+' '+l.name+'</td><td>'+INFO[l.g].title+'</td><td class="n">'+(st>0?s+'/'+cp:'—')+'</td><td class="n">'+(st>0?starsStr(st):'—')+'</td></tr>';
+ });
+ h+='</tbody></table>';
+
+ h+='<div class="seal">'
+ +'<div style="display:flex;align-items:center;gap:8px">'+jetSvg(58)+'<p class="mono" style="font-size:8px;letter-spacing:.14em;color:#ffb056;max-width:150px;line-height:1.6">JET<br>CYBER CAT CO-PILOT<br>APPROVED ✓</p></div>'
+ +'<div class="stamp">NEON<br>THAILAND<br>20XX</div>'
+ +'<div class="sign"><div class="ln">DATE '+today()+' • ID VR-'+String(total).padStart(3,'0')+'-'+String(dc)+'</div></div>'
+ +'</div>';
+ h+='<p class="tiny" style="margin-top:14px">พิมพ์หรือบันทึกเป็น PDF ได้ทุกเมื่อ • เกมนี้ทำงานออฟไลน์ 100%</p>';
+ h+='</div>';
+
+ h+='<div class="noprint" style="margin-top:14px">'+jetBox(TIPS.general,
+  (total>=850?'สุดยอด! คุณคือ GRID MASTER ของประเทศไทยปี 20XX 🏆':total>=600?'เกือบเต็มแล้ว! เหลืออีก '+(1000-total)+' แต้ม ลองเล่นเมืองที่ยังได้ดาวไม่ครบ 3 ดวง':'ดีมาก! เก็บดาวให้ครบ 3 ดวงทุกเมืองเพื่อดันคะแนนขึ้นอีก'),
+  null,null)+'</div>';
+
+ app.innerHTML=h;
+ document.getElementById('back').onclick=function(){vMap();};
+ document.getElementById('pr').onclick=function(){S.click();window.print();};
+}
+/* eslint-disable */
+/* Raw game script: concatenated into the standalone offline build. Shares one closure with the other game parts. */
+/* ---------- 1. TUK TUK TRANSLATE ---------- */
+function gMC(loc){
+ var qs=shuffle(VOCAB).slice(0,10).map(function(w){
+  var wrong=shuffle(VOCAB.filter(function(v){return v[0]!==w[0];})).slice(0,3).map(function(v){return v[1];});
+  return {en:w[0],th:w[1],opts:shuffle(wrong.concat([w[1]]))};
+ });
+ var i=0,score=0,streak=0,sel=null,fb=null;
+ function render(){
+  var q=qs[i];
+  var h=hud(loc,score,'<span style="color:#ff2fb9">🔥 '+streak+'</span>')+pbar((i+1)/qs.length*100);
+  h+='<div class="card"><p class="lbl" style="text-align:center">TRANSLATE TO THAI • แปลเป็นไทย</p><h2 class="qbig">'+esc(q.en).toUpperCase()+'</h2><div class="grid2">';
+  q.opts.forEach(function(o,idx){
+   var cls='opt';
+   if(sel!==null){if(o===q.th)cls+=' right';else if(sel===o)cls+=' wrongpick';else cls+=' dim';}
+   h+='<button class="'+cls+'" data-i="'+idx+'">'+esc(o)+'</button>';
+  });
+  h+='</div>';
+  if(fb)h+='<p class="'+(fb.ok?'ok':'bad')+'" style="margin-top:12px">'+(fb.ok?'+'+fb.pts+' POINTS!':'เฉลย: '+esc(fb.ans))+'</p>';
+  h+='<p class="tiny" style="margin-top:12px">QUESTION '+(i+1)+' / '+qs.length+'</p></div>';
+  app.innerHTML=h;
+  var bs=app.querySelectorAll('.opt');
+  for(var b=0;b<bs.length;b++){bs[b].onclick=function(){pick(qs[i].opts[parseInt(this.getAttribute('data-i'),10)]);};}
+ }
+ function pick(a){
+  if(sel!==null)return;sel=a;var q=qs[i];
+  if(a===q.th){var pts=100+streak*12;score+=pts;streak++;fb={ok:1,pts:pts};if(streak>=3)S.match();else S.correct();}
+  else{streak=0;fb={ok:0,ans:q.th};S.wrong();}
+  render();
+  setTimeout(function(){i++;sel=null;fb=null;if(i<qs.length)render();else finish(loc,score);},1300);
+ }
+ render();
+}
+
+/* ---------- 2. SENTENCE BUILD ---------- */
+function gSentence(loc){
+ var qs=shuffle(SENT).slice(0,5).map(function(s){return {en:s[0],th:s[1]};});
+ var i=0,score=0,fb=null,tleft=30,done=false,used=[],build=[],hint=null,chips=[];
+ chips=shuffle(qs[0].en.split(' '));
+ function render(){
+  var q=qs[i];
+  var h=hud(loc,score,clockHtml(tleft,7))+pbar((i+1)/qs.length*100);
+  h+=jetBox(TIPS.sentence,hint,'jethint',null);
+  h+='<div class="card" style="text-align:center;margin-top:10px"><p class="lbl" style="text-align:center">BUILD THE ENGLISH SENTENCE</p><h2 class="qth">'+esc(q.th)+'</h2>';
+  h+='<div style="min-height:58px;border:1px dashed rgba(0,229,255,.5);border-radius:11px;background:rgba(0,229,255,.05);padding:9px;display:flex;flex-wrap:wrap;gap:5px;justify-content:center;align-items:center;margin-bottom:12px">';
+  if(build.length===0)h+='<span class="tiny">แตะคำด้านล่างเพื่อเรียงประโยค</span>';
+  build.forEach(function(w,k){h+='<button class="chip" style="border-color:#00e5ff;color:#00e5ff" data-rm="'+k+'">'+esc(w)+'</button>';});
+  h+='</div><div style="display:flex;flex-wrap:wrap;gap:5px;justify-content:center">';
+  chips.forEach(function(w,ci){if(used.indexOf(ci)<0)h+='<button class="chip" data-c="'+ci+'">'+esc(w)+'</button>';});
+  h+='</div>';
+  var full=build.length===chips.length;
+  h+='<button class="btn" id="check" style="max-width:220px;margin:14px auto 0" '+((full&&!fb)?'':'disabled')+'>CHECK ▸</button>';
+  if(fb)h+='<p class="'+(fb.ok?'ok':'bad')+'" style="margin-top:12px">'+(fb.ok?'+'+fb.pts+' POINTS!':'เฉลย: '+esc(fb.ans))+'</p>';
+  h+='<p class="tiny" style="margin-top:10px">SENTENCE '+(i+1)+' / '+qs.length+'</p></div>';
+  app.innerHTML=h;
+  var cs=app.querySelectorAll('[data-c]');
+  for(var a=0;a<cs.length;a++){cs[a].onclick=function(){var ci=parseInt(this.getAttribute('data-c'),10);used.push(ci);build.push(chips[ci]);S.click();render();};}
+  var rs=app.querySelectorAll('[data-rm]');
+  for(var b=0;b<rs.length;b++){rs[b].onclick=function(){var k=parseInt(this.getAttribute('data-rm'),10);used.splice(k,1);build.splice(k,1);S.click();render();};}
+  document.getElementById('check').onclick=function(){submit(false);};
+  document.getElementById('jethint').onclick=function(){
+   S.click();
+   var words=q.en.split(' ');
+   hint='เริ่มด้วยประธาน: "'+words[0]+(words[1]?' '+words[1]:'')+'" แล้วตามด้วยกริยา — อย่าลืมว่าภาษาอังกฤษเรียง ประธาน+กริยา+กรรม';
+   render();
+  };
+ }
+ function submit(timed){
+  if(fb||done)return;
+  var q=qs[i];
+  var ok=!timed&&build.join(' ')===q.en;
+  if(ok){var pts=250+tleft*6;score+=pts;fb={ok:1,pts:pts};S.correct();}
+  else{fb={ok:0,ans:q.en};S.wrong();}
+  render();
+  setTimeout(function(){
+   i++;fb=null;used=[];build=[];hint=null;
+   if(i<qs.length){chips=shuffle(qs[i].en.split(' '));tleft=30;render();}
+   else{done=true;finish(loc,score);}
+  },2100);
+ }
+ T=setInterval(function(){
+  if(fb||done)return;
+  tleft--;
+  if(tleft<=7&&tleft>0)S.warn();
+  if(tleft<=0){clearT();submit(true);}
+  else{var c=document.getElementById('clock');if(c){c.textContent='TIME '+tleft+'s';c.style.color=tleft<=7?'#ff3b5c':'#ffe600';}}
+ },1000);
+ render();
+}
+
+/* ---------- 3. ANAGRAM ---------- */
+function gAnagram(loc){
+ var qs=shuffle(VOCAB.filter(function(w){return w[0].indexOf(' ')<0&&w[0].length>=5&&w[0].length<=9;})).slice(0,8);
+ var i=0,score=0,fb=null,tleft=28,done=false,used=[],build=[],letters=[],hint=null;
+ letters=shuffle(qs[0][0].split(''));
+ function render(){
+  var q=qs[i];
+  var h=hud(loc,score,clockHtml(tleft,7))+pbar((i+1)/qs.length*100);
+  h+='<div class="card" style="text-align:center"><p class="lbl" style="text-align:center">UNSCRAMBLE THE ENGLISH WORD</p><h2 class="qth">'+esc(q[1])+'</h2>';
+  h+='<div style="display:flex;flex-wrap:wrap;justify-content:center;margin-bottom:12px">';
+  q[0].split('').forEach(function(_,k){h+='<button class="slot'+(build[k]?' on':'')+'" data-rm="'+k+'">'+(build[k]||'•')+'</button>';});
+  h+='</div><div style="display:flex;flex-wrap:wrap;justify-content:center">';
+  letters.forEach(function(ch,ci){if(used.indexOf(ci)<0)h+='<button class="tile" data-c="'+ci+'">'+esc(ch)+'</button>';});
+  h+='</div>';
+  var full=build.length===q[0].length;
+  h+='<button class="btn" id="check" style="max-width:220px;margin:14px auto 0" '+((full&&!fb)?'':'disabled')+'>CHECK ▸</button>';
+  if(fb)h+='<p class="'+(fb.ok?'ok':'bad')+'" style="margin-top:12px">'+(fb.ok?'+'+fb.pts+' POINTS!':'เฉลย: '+esc(String(fb.ans).toUpperCase()))+'</p>';
+  h+='<p class="tiny" style="margin-top:10px">WORD '+(i+1)+' / '+qs.length+'</p></div>';
+  h+=jetBox(TIPS.anagram,hint,'jethint',null);
+  app.innerHTML=h;
+  var cs=app.querySelectorAll('[data-c]');
+  for(var a=0;a<cs.length;a++){cs[a].onclick=function(){var ci=parseInt(this.getAttribute('data-c'),10);used.push(ci);build.push(letters[ci]);S.click();render();};}
+  var rs=app.querySelectorAll('.slot.on');
+  for(var b=0;b<rs.length;b++){rs[b].onclick=function(){var k=parseInt(this.getAttribute('data-rm'),10);build.splice(k,1);used.splice(k,1);S.click();render();};}
+  document.getElementById('check').onclick=function(){submit(false);};
+  document.getElementById('jethint').onclick=function(){
+   S.click();
+   hint='คำนี้ขึ้นต้นด้วย "'+q[0].charAt(0).toUpperCase()+'" และลงท้ายด้วย "'+q[0].charAt(q[0].length-1).toUpperCase()+'" — มี '+q[0].length+' ตัวอักษร';
+   render();
+  };
+ }
+ function submit(timed){
+  if(fb||done)return;
+  var q=qs[i];
+  var ok=!timed&&build.join('')===q[0];
+  if(ok){var pts=150+tleft*10;score+=pts;fb={ok:1,pts:pts};S.correct();}
+  else{fb={ok:0,ans:q[0]};S.wrong();}
+  render();
+  setTimeout(function(){
+   i++;fb=null;used=[];build=[];hint=null;
+   if(i<qs.length){letters=shuffle(qs[i][0].split(''));tleft=28;render();}
+   else{done=true;finish(loc,score);}
+  },1800);
+ }
+ T=setInterval(function(){
+  if(fb||done)return;
+  tleft--;
+  if(tleft<=7&&tleft>0)S.warn();
+  if(tleft<=0){clearT();submit(true);}
+  else{var c=document.getElementById('clock');if(c){c.textContent='TIME '+tleft+'s';c.style.color=tleft<=7?'#ff3b5c':'#ffe600';}}
+ },1000);
+ render();
+}
+
+/* ---------- 4. SPEED MATCH ---------- */
+function gMatch(loc){
+ var pairs=shuffle(VOCAB).slice(0,8);
+ var ens=shuffle(pairs.map(function(p){return p[0];}));
+ var ths=shuffle(pairs.map(function(p){return p[1];}));
+ var sel=null,matched=[],score=0,tleft=80,done=false;
+ function render(){
+  var h=hud(loc,score,clockHtml(tleft,10))+pbar(matched.length/pairs.length*100);
+  h+='<p class="lbl" style="text-align:center;margin-bottom:12px">MATCH ENGLISH TO THAI • จับคู่คำ</p>';
+  h+='<div style="display:flex;gap:16px;align-items:center;justify-content:center;flex-wrap:nowrap">';
+  h+='<div style="display:flex;flex-direction:column;gap:6px;flex:1">';
+  ens.forEach(function(e){
+   var m=matched.indexOf(e)>=0;
+   h+='<button class="chip'+(m?' dim':'')+'" data-en="'+esc(e)+'" '+(m?'disabled':'')+(sel===e?' style="border-color:#00e5ff;color:#00e5ff;box-shadow:0 0 14px rgba(0,229,255,.45)"':'')+'>'+esc(e)+'</button>';
+  });
+  h+='</div><div style="width:34px;flex:0 0 34px"><div class="scanner" style="width:34px"><i style="width:22px"></i></div></div><div style="display:flex;flex-direction:column;gap:6px;flex:1">';
+  ths.forEach(function(t){
+   var pair=pairs.filter(function(p){return p[1]===t;})[0];
+   var m=matched.indexOf(pair[0])>=0;
+   h+='<button class="chip'+(m?' dim':'')+'" data-th="'+esc(t)+'" '+((m||!sel)?'disabled':'')+'>'+esc(t)+'</button>';
+  });
+  h+='</div></div>';
+  h+='<p class="tiny" style="margin-top:14px">MATCHED '+matched.length+' / '+pairs.length+'</p>';
+  app.innerHTML=h;
+  var es=app.querySelectorAll('[data-en]');
+  for(var a=0;a<es.length;a++){es[a].onclick=function(){if(matched.indexOf(this.getAttribute('data-en'))<0){S.click();sel=this.getAttribute('data-en');render();}};}
+  var ts=app.querySelectorAll('[data-th]');
+  for(var b=0;b<ts.length;b++){ts[b].onclick=function(){pickTh(this.getAttribute('data-th'));};}
+ }
+ function pickTh(t){
+  if(!sel||done)return;
+  var pair=pairs.filter(function(p){return p[0]===sel;})[0];
+  if(pair&&pair[1]===t){matched.push(sel);score+=150;S.match();sel=null;render();if(matched.length===pairs.length){done=true;clearT();setTimeout(function(){finish(loc,score+tleft*10);},400);}}
+  else{S.wrong();sel=null;render();}
+ }
+ T=setInterval(function(){
+  if(done)return;
+  tleft--;
+  if(tleft<=10&&tleft>0)S.warn();
+  if(tleft<=0){clearT();done=true;finish(loc,score);}
+  else{var c=document.getElementById('clock');if(c){c.textContent='TIME '+tleft+'s';c.style.color=tleft<=10?'#ff3b5c':'#ffe600';}}
+ },1000);
+ render();
+}
+
+/* ---------- 5. TYPE ATTACK ---------- */
+function gType(loc){
+ var qs=shuffle(VOCAB).slice(0,10);
+ var i=0,score=0,fb=null,tleft=16,done=false;
+ function render(){
+  var q=qs[i];
+  var h=hud(loc,score,clockHtml(tleft,5))+pbar((i+1)/qs.length*100);
+  h+='<div class="card" style="text-align:center"><p class="lbl" style="text-align:center">TYPE THE ENGLISH WORD</p><h2 class="qth">'+esc(q[1])+'</h2>';
+  h+='<input id="ans" placeholder="พิมพ์คำตอบ..." '+(fb?'disabled':'')+' style="max-width:340px;margin:0 auto;text-align:center">';
+  h+='<button class="btn" id="sub" style="max-width:340px;margin:12px auto 0" '+(fb?'disabled':'')+'>SUBMIT ▸</button>';
+  if(fb)h+='<p class="'+(fb.ok?'ok':'bad')+'" style="margin-top:12px">'+(fb.ok?'+'+fb.pts+' POINTS!':'เฉลย: '+esc(String(fb.ans).toUpperCase()))+'</p>';
+  h+='<p class="tiny" style="margin-top:10px">QUESTION '+(i+1)+' / '+qs.length+'</p></div>';
+  app.innerHTML=h;
+  var el=document.getElementById('ans');if(el&&!fb){el.focus();el.onkeydown=function(e){if(e.key==='Enter')submit(false);};}
+  document.getElementById('sub').onclick=function(){submit(false);};
+ }
+ function submit(timed){
+  if(fb||done)return;
+  var el=document.getElementById('ans');
+  var v=timed||!el?'':(el.value||'');
+  var q=qs[i];
+  var ok=v.toLowerCase().trim()===q[0].toLowerCase();
+  if(ok){var pts=200+tleft*6;score+=pts;fb={ok:1,pts:pts};S.correct();}
+  else{fb={ok:0,ans:q[0]};S.wrong();}
+  render();
+  setTimeout(function(){i++;fb=null;if(i<qs.length){tleft=16;render();}else{done=true;finish(loc,score);}},1700);
+ }
+ T=setInterval(function(){
+  if(fb||done)return;
+  tleft--;
+  if(tleft<=5&&tleft>0)S.warn();
+  if(tleft<=0){clearT();submit(true);}
+  else{var c=document.getElementById('clock');if(c){c.textContent='TIME '+tleft+'s';c.style.color=tleft<=5?'#ff3b5c':'#ffe600';}}
+ },1000);
+ render();
+}
+
+/* ---------- 6. HOLO VISION ---------- */
+function gImage(loc){
+ var qs=shuffle(EMOJIQ).slice(0,8).map(function(e){
+  var opts=shuffle([e[1]].concat(shuffle(EMOJIQ.filter(function(o){return o[1]!==e[1];})).slice(0,3).map(function(o){return o[1];})));
+  return {emoji:e[0],en:e[1],th:e[2],opts:opts};
+ });
+ var i=0,score=0,streak=0,sel=null,fb=null;
+ function render(){
+  var q=qs[i];
+  var h=hud(loc,score,'<span style="color:#ff2fb9">🔥 '+streak+'</span>')+pbar((i+1)/qs.length*100);
+  h+='<div class="card" style="text-align:center"><p class="lbl" style="text-align:center">IMAGE ONLY — NAME IT IN ENGLISH</p>';
+  h+='<div class="holo">'+(stickerFor(q.en,124)||q.emoji)+'</div><div class="grid2">';
+  q.opts.forEach(function(o,idx){
+   var cls='opt';
+   if(sel!==null){if(o===q.en)cls+=' right';else if(sel===o)cls+=' wrongpick';else cls+=' dim';}
+   h+='<button class="'+cls+'" data-i="'+idx+'">'+esc(o)+'</button>';
+  });
+  h+='</div>';
+  if(fb)h+='<p class="'+(fb.ok?'ok':'bad')+'" style="margin-top:12px">'+(fb.ok?'+'+fb.pts+' POINTS!':'เฉลย: '+esc(String(fb.ans).toUpperCase()))+'</p>';
+  h+='<p class="tiny" style="margin-top:10px">PICTURE '+(i+1)+' / '+qs.length+'</p></div>';
+  app.innerHTML=h;
+  var bs=app.querySelectorAll('[data-i]');
+  for(var b=0;b<bs.length;b++){bs[b].onclick=function(){pick(qs[i].opts[parseInt(this.getAttribute('data-i'),10)]);};}
+ }
+ function pick(a){
+  if(sel!==null)return;sel=a;var q=qs[i];
+  if(a===q.en){var pts=120+streak*12;score+=pts;streak++;fb={ok:1,pts:pts};if(streak>=3)S.match();else S.correct();}
+  else{streak=0;fb={ok:0,ans:q.en};S.wrong();}
+  render();
+  setTimeout(function(){i++;sel=null;fb=null;if(i<qs.length)render();else finish(loc,score);},1300);
+ }
+ render();
+}
+/* eslint-disable */
+/* Raw game script: concatenated into the standalone offline build. Shares one closure with the other game parts. */
+/* ---------- 7. LASER DEFENDER ---------- */
+function gLaser(loc){
+ var wave=shuffle(VOCAB).slice(0,9);
+ var kill=0,score=0,lives=3,done=false,ships=[],lastSpawn=0;
+ var sky=null;
+ function target(){return wave[Math.min(kill,wave.length-1)];}
+
+ function starsHtml(){
+  var s='';for(var i=0;i<26;i++){s+='<span class="st" style="left:'+(Math.random()*100).toFixed(1)+'%;top:'+(Math.random()*80).toFixed(1)+'%;opacity:'+(0.25+Math.random()*0.7).toFixed(2)+'"></span>';}
+  return s;
+ }
+ function updateHud(){
+  var t=target();
+  var tg=document.getElementById('tgt');if(tg)tg.textContent=t[0].toUpperCase();
+  var lv=document.getElementById('lives');
+  if(lv){var s='';for(var i=0;i<3;i++)s+=i<lives?'♥':'<span style="opacity:.25">♥</span>';lv.innerHTML=s;}
+  var sc=document.getElementById('sc');if(sc)sc.textContent=score;
+  var kb=document.getElementById('kb');if(kb)kb.style.width=(kill/wave.length*100)+'%';
+  var kn=document.getElementById('kn');if(kn)kn.textContent=kill+'/'+wave.length;
+ }
+ function removeShip(s){if(s.el&&s.el.parentNode)s.el.parentNode.removeChild(s.el);ships=ships.filter(function(x){return x!==s;});}
+ function spawn(){
+  var t=target(),th=null;
+  var hasT=ships.some(function(s){return s.th===t[1];});
+  if(!hasT)th=t[1];
+  else{
+   var pool=VOCAB.filter(function(v){return v[1]!==t[1]&&!ships.some(function(s){return s.th===v[1];});});
+   if(pool.length)th=pool[Math.floor(Math.random()*pool.length)][1];
+  }
+  if(!th)return;
+  var s={th:th,x:12+Math.random()*72,top:-6,speed:0.45+Math.random()*0.4,el:null};
+  var el=document.createElement('button');
+  el.className='ship';
+  el.innerHTML='<span class="body">🛸</span><span class="lb">'+esc(s.th)+'</span>';
+  el.style.left=s.x+'%';el.style.top=s.top+'%';
+  el.onclick=function(){shoot(s);};
+  sky.appendChild(el);s.el=el;ships.push(s);
+ }
+ function boomAt(s,txt){
+  var b=document.createElement('div');
+  b.className='boom';b.textContent=txt||'💥';
+  b.style.left=s.x+'%';b.style.top=s.top+'%';
+  sky.appendChild(b);
+  setTimeout(function(){if(b.parentNode)b.parentNode.removeChild(b);},560);
+ }
+ function fireBeam(s){
+  var W=sky.clientWidth,H=sky.clientHeight;
+  var x=(s.x/100)*W,y=(s.top/100)*H;
+  var dx=x-W/2,dy=y-H;
+  var len=Math.sqrt(dx*dx+dy*dy);
+  var ang=Math.atan2(dy,dx)*180/Math.PI;
+  var b=document.createElement('div');
+  b.className='beam';
+  b.style.left='50%';b.style.top='100%';
+  b.style.width=len+'px';
+  b.style.transform='translate(0,-50%) rotate('+ang+'deg)';
+  sky.appendChild(b);
+  setTimeout(function(){if(b.parentNode)b.parentNode.removeChild(b);},300);
+  S.beam();
+ }
+ function shoot(s){
+  if(done)return;
+  fireBeam(s);
+  if(s.th===target()[1]){
+   score+=170;kill++;boomAt(s);removeShip(s);S.zap();updateHud();
+   if(kill>=wave.length){done=true;clearT();setTimeout(function(){finish(loc,score+lives*120);},600);}
+  }else{
+   score=Math.max(0,score-40);boomAt(s,'✖');S.wrong();updateHud();
+  }
+ }
+
+ app.innerHTML=hud(loc,0,'<span id="lives" style="color:#ff3b5c;letter-spacing:2px"></span>')
+ +'<div class="pbar" style="margin-bottom:10px"><i id="kb" style="width:0"></i></div>'
+ +'<div class="card" style="padding:12px 12px 8px;text-align:center;margin-bottom:10px">'
+ +'<p class="lbl" style="text-align:center;margin:0">TARGET WORD • <span id="kn" class="mono" style="color:#8f9ec4">0/'+wave.length+'</span></p>'
+ +'<h2 id="tgt" class="chrome" style="font-family:var(--disp);font-size:clamp(20px,5.4vw,30px);letter-spacing:.08em;margin:4px 0 0">'+target()[0].toUpperCase()+'</h2>'
+ +'<p class="tiny" style="margin-top:4px">ยิงยานที่มีคำแปลไทยถูกต้อง</p></div>'
+ +'<div class="sky" id="lsky">'+starsHtml()
+ +'<div class="cannon">🔫</div></div>'
+ +'<div class="mono" style="text-align:center;font-size:13px;margin-top:10px;color:#00e5ff">SCORE <span id="sc">0</span></div>';
+
+ sky=document.getElementById('lsky');
+ updateHud();
+ T=setInterval(function(){
+  if(done)return;
+  var now=Date.now();
+  if(now-lastSpawn>880&&ships.length<4){spawn();lastSpawn=now;}
+  ships.forEach(function(s){s.top+=s.speed;if(s.el)s.el.style.top=s.top+'%';});
+  var esc=ships.filter(function(s){return s.top>86;});
+  esc.forEach(function(s){
+   removeShip(s);
+   if(s.th===target()[1]){
+    lives--;S.wrong();updateHud();
+    if(lives<=0){done=true;clearT();setTimeout(function(){finish(loc,score);},500);}
+   }
+  });
+ },80);
+}
+
+/* ---------- 8. GRID CONNECT (cables) ---------- */
+function gCable(loc){
+ var pairs=shuffle(VOCAB).slice(0,6);
+ var leftOrder=shuffle(pairs.map(function(p,i){return i;}));
+ var rightOrder=shuffle(pairs.map(function(p,i){return i;}));
+ var sel=null,conns=[],score=0,tleft=100,done=false,wrongOnce=false;
+ var wrapEl=null;
+
+ function drawCables(){
+  if(!wrapEl)return;
+  var svg=document.getElementById('cabsvg');
+  if(!svg)return;
+  var rw=wrapEl.getBoundingClientRect();
+  var W=rw.width,H=rw.height;
+  svg.setAttribute('viewBox','0 0 '+W+' '+H);
+  var out='';
+  conns.forEach(function(id){
+   var a=wrapEl.querySelector('[data-pl="'+id+'"]');
+   var b=wrapEl.querySelector('[data-pr="'+id+'"]');
+   if(!a||!b)return;
+   var ra=a.getBoundingClientRect(),rb=b.getBoundingClientRect();
+   var x1=ra.right-rw.left,y1=ra.top+ra.height/2-rw.top;
+   var x2=rb.left-rw.left,y2=rb.top+rb.height/2-rw.top;
+   var mx=(x1+x2)/2;
+   out+='<path d="M'+x1+' '+y1+' C'+mx+' '+y1+','+mx+' '+y2+','+x2+' '+y2+'" fill="none" stroke="#4dffb8" stroke-width="2.5" stroke-linecap="round" opacity=".95" filter="url(#cabglow)"/>';
+   out+='<circle cx="'+x1+'" cy="'+y1+'" r="2.6" fill="#00e5ff"/><circle cx="'+x2+'" cy="'+y2+'" r="2.6" fill="#00e5ff"/>';
+  });
+  svg.innerHTML=out;
+ }
+
+ function render(){
+  var h=hud(loc,score,clockHtml(tleft,12))+pbar(conns.length/pairs.length*100);
+  h+='<div class="card"><p class="lbl" style="text-align:center">CONNECT ENGLISH → THAI • ต่อสายให้ครบ</p>';
+  h+='<div class="cablewrap" id="cabwrap"><svg id="cabsvg"><defs><filter id="cabglow" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="2.4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs></svg>';
+  h+='<div class="col">';
+  leftOrder.forEach(function(pi){
+   var p=pairs[pi],doneP=conns.indexOf(pi)>=0;
+   h+='<button class="port'+(doneP?' done':'')+(sel===pi?' sel':'')+'" data-pl="'+pi+'"><span class="dot" style="background:'+(doneP?'#4dffb8':'#00e5ff')+'"></span><span>'+esc(p[0])+'</span></button>';
+  });
+  h+='</div><div class="col r">';
+  rightOrder.forEach(function(pi){
+   var p=pairs[pi],doneP=conns.indexOf(pi)>=0;
+   h+='<button class="port'+(doneP?' done':'')+'" data-pr="'+pi+'" '+(doneP?'disabled':'')+'><span>'+esc(p[1])+'</span><span class="dot" style="background:'+(doneP?'#4dffb8':'#ff2fb9')+'"></span></button>';
+  });
+  h+='</div></div>';
+  h+='<p class="tiny" style="margin-top:10px">CABLES '+conns.length+' / '+pairs.length+'</p></div>';
+  h+=jetBox(TIPS.cable,null,null,'jcn');
+  app.innerHTML=h;
+  wrapEl=document.getElementById('cabwrap');
+  drawCables();
+
+  var ls=app.querySelectorAll('[data-pl]');
+  for(var a=0;a<ls.length;a++){
+   ls[a].onclick=function(){
+    var pi=parseInt(this.getAttribute('data-pl'),10);
+    if(conns.indexOf(pi)>=0)return;
+    S.click();sel=pi;render();
+   };
+  }
+  var rs=app.querySelectorAll('[data-pr]');
+  for(var b=0;b<rs.length;b++){
+   rs[b].onclick=function(){
+    var pi=parseInt(this.getAttribute('data-pr'),10);
+    if(sel===null||conns.indexOf(pi)>=0)return;
+    plug(pi);
+   };
+  }
+  var jn=document.getElementById('jcn');
+  if(jn)jn.onclick=function(){jetTipIdx++;S.click();render();};
+ }
+
+ function plug(pi){
+  if(done)return;
+  if(pi===sel){
+   conns.push(pi);score+=160;S.plug();sel=null;render();
+   if(conns.length===pairs.length){done=true;clearT();setTimeout(function(){finish(loc,score+tleft*8);},500);}
+  }else{
+   S.wrong();score=Math.max(0,score-20);
+   var el=wrapEl?wrapEl.querySelector('[data-pr="'+pi+'"]'):null;
+   if(el){el.className='port flash';}
+   sel=null;tleft=Math.max(1,tleft-3);
+   setTimeout(function(){render();},320);
+  }
+ }
+
+ T=setInterval(function(){
+  if(done)return;
+  tleft--;
+  if(tleft<=12&&tleft>0)S.warn();
+  if(tleft<=0){clearT();done=true;finish(loc,score);}
+  else{var c=document.getElementById('clock');if(c){c.textContent='TIME '+tleft+'s';c.style.color=tleft<=12?'#ff3b5c':'#ffe600';}}
+ },1000);
+
+ window.addEventListener('resize',function(){if(document.getElementById('cabwrap'))drawCables();});
+ render();
+ setTimeout(drawCables,120);
+}
+
+/* ---------- 9. CODE RIDER ---------- */
+function gCode(loc){
+ var puz=shuffle(CODE).slice(0,4);
+ var i=0,score=0,fb=null,tleft=50,done=false,order=[],pool=[],hint=null,outTxt='';
+ var PRINT_IDX=3;
+
+ function buildPuzzle(p){
+  return [
+   {k:'SET',v:'subject',s:p.s},
+   {k:'SET',v:'verb',s:p.v},
+   {k:'SET',v:'object',s:p.o},
+   {k:'PRINT',expr:'subject + " " + verb + " " + object'}
+  ];
+ }
+ var LINES=[];
+ function resetPuzzle(){
+  LINES=buildPuzzle(puz[i]);
+  pool=shuffle([0,1,2,3]);
+  order=[];
+ }
+
+ function lineHtml(idx){
+  var l=LINES[idx];
+  if(l.k==='SET')return '<span class="kw">SET</span> <span class="vr">'+l.v+'</span> = <span class="st">"'+esc(l.s)+'"</span>';
+  return '<span class="kw">PRINT</span> '+esc(l.expr);
+ }
+ function codeLines(list,cls){
+  var s='';
+  list.forEach(function(idx,k){
+   s+='<button class="codeline '+cls+'" data-p="'+idx+'"><span style="color:#5a6784">'+pad2(k+1)+'</span> '+lineHtml(idx)+'</button>';
+  });
+  return s;
+ }
+
+ function outputOf(seq){
+  var parts=[];
+  var printed=false;
+  for(var k=0;k<seq.length;k++){
+   var l=LINES[seq[k]];
+   if(l.k==='SET')parts.push(l.s);
+   else printed=true;
+  }
+  return {text:parts.join(' '),printed:printed};
+ }
+
+ function render(){
+  var p=puz[i];
+  var h=hud(loc,score,clockHtml(tleft,8))+pbar((i+1)/puz.length*100);
+  h+='<div class="card"><p class="lbl" style="text-align:center">ORDER THE CODE • เรียงบรรทัดให้ถูกแล้วกด RUN</p>';
+  h+='<h2 class="qth">'+esc(p.th)+'</h2>';
+  h+='<div class="term" id="term"><span class="prompt">// PROGRAM</span><br><span id="progout"></span></div>';
+  h+='<div class="gap" style="margin-top:10px" id="prog">'+codeLines(order,'')+'</div>';
+  h+='<button class="btn" id="run" style="margin-top:10px" '+(order.length===4&&!fb?'':'disabled')+'>▶ RUN PROGRAM</button>';
+  h+='<p class="lbl" style="margin-top:14px">AVAILABLE LINES</p>';
+  h+='<div class="gap" id="pool">'+codeLines(pool,'')+'</div>';
+  if(fb)h+='<p class="'+(fb.ok?'ok':'bad')+'" style="margin-top:12px">'+(fb.ok?'+'+fb.pts+' POINTS! PROGRAM COMPILED ✓':'โปรแกรมยังผิด — ผลลัพธ์ที่ถูกคือ: '+esc(p.s+' '+p.v+' '+p.o))+'</p>';
+  h+='<p class="tiny" style="margin-top:10px">PUZZLE '+(i+1)+' / '+puz.length+'</p></div>';
+  h+=jetBox(TIPS.code,hint,'jch',null);
+  app.innerHTML=h;
+
+  var pr=app.querySelectorAll('#prog [data-p]');
+  for(var a=0;a<pr.length;a++){
+   pr[a].onclick=function(){
+    var idx=parseInt(this.getAttribute('data-p'),10);
+    var at=order.indexOf(idx);
+    if(at<0)return;
+    order.splice(at,1);pool.push(idx);S.click();render();
+   };
+  }
+  var pl=app.querySelectorAll('#pool [data-p]');
+  for(var b=0;b<pl.length;b++){
+   pl[b].onclick=function(){
+    var idx=parseInt(this.getAttribute('data-p'),10);
+    var at=pool.indexOf(idx);
+    if(at<0)return;
+    pool.splice(at,1);order.push(idx);S.click();render();
+   };
+  }
+  document.getElementById('run').onclick=function(){run();};
+  document.getElementById('jch').onclick=function(){
+   S.click();hint='เรียงตามนี้: SET ประธาน → SET กริยา → SET กรรม → PRINT (บรรทัด PRINT ต้องอยู่ท้ายสุดเสมอ)';render();
+  };
+  var po=document.getElementById('progout');
+  if(po)po.innerHTML=outTxt;
+ }
+
+ function run(){
+  if(fb||done||order.length!==4)return;
+  var out=outputOf(order);
+  var want=puz[i].s+' '+puz[i].v+' '+puz[i].o;
+  var ok=out.printed&&order[3]===PRINT_IDX&&order[0]===0&&order[1]===1&&order[2]===2;
+  var terminal='';
+  order.forEach(function(idx){
+   var l=LINES[idx];
+   if(l.k==='SET')terminal+='<span class="out">&gt; '+l.v+' = "'+esc(l.s)+'"</span><br>';
+   else terminal+='<span class="out">&gt; PRINT → '+esc(out.text)+'</span><br>';
+  });
+  if(ok){terminal+='<span style="color:#4dffb8">✔ COMPILED — SENTENCE OK</span>';}
+  else{terminal+='<span class="err">✘ SYNTAX ERROR — ผลลัพธ์อ่านไม่เป็นประโยค</span>';}
+  outTxt=terminal;
+  if(ok){var pts=280+Math.max(0,tleft)*4;score+=pts;fb={ok:1,pts:pts};S.correct();}
+  else{fb={ok:0};S.wrong();}
+  render();
+  setTimeout(function(){
+   if(done)return;
+   i++;fb=null;hint=null;outTxt='';
+   if(i<puz.length){resetPuzzle();tleft=50;render();}
+   else{done=true;finish(loc,score);}
+  },2100);
+ }
+
+ T=setInterval(function(){
+  if(fb||done)return;
+  tleft--;
+  if(tleft<=8&&tleft>0)S.warn();
+  if(tleft<=0){clearT();done=true;finish(loc,score);}
+  else{var c=document.getElementById('clock');if(c){c.textContent='TIME '+tleft+'s';c.style.color=tleft<=8?'#ff3b5c':'#ffe600';}}
+ },1000);
+
+ resetPuzzle();
+ render();
+}
+
+/* ---------- 10. FINAL BOSS ---------- */
+function gBoss(loc){
+ var qs=shuffle(VOCAB).slice(0,12).map(function(w,idx){
+  var t=idx%3;
+  if(t===0){var opts=shuffle(shuffle(VOCAB.filter(function(v){return v[0]!==w[0];})).slice(0,3).map(function(v){return v[1];}).concat([w[1]]));return {en:w[0],th:w[1],type:'mc',opts:opts};}
+  return {en:w[0],th:w[1],type:t===1?'type_en':'type_th'};
+ });
+ var i=0,score=0,fb=null,tleft=130,done=false;
+ function clockStr(){return Math.floor(tleft/60)+':'+pad2(tleft%60);}
+ function render(){
+  var q=qs[i];
+  var h='<div class="hud"><span style="color:#ff2fb9;animation:pulse 1s infinite">⚡ BOSS '+loc.name+' ⚡</span><span class="s">SCORE '+score+'</span><span id="clock" class="r" style="color:'+(tleft<=30?'#ff3b5c':'#ffe600')+'">'+clockStr()+'</span></div>'+pbar((i+1)/qs.length*100);
+  h+='<div class="card" style="text-align:center">';
+  if(q.type==='mc'){
+   h+='<p class="lbl" style="text-align:center">TRANSLATE TO THAI</p><h2 class="qbig">'+esc(q.en).toUpperCase()+'</h2><div class="grid2">';
+   q.opts.forEach(function(o,idx){var cls='opt';if(fb){if(o===q.th)cls+=' right';else cls+=' dim';}h+='<button class="'+cls+'" data-i="'+idx+'" '+(fb?'disabled':'')+'>'+esc(o)+'</button>';});
+   h+='</div>';
+  }else{
+   var isEn=q.type==='type_en';
+   h+='<p class="lbl" style="text-align:center">'+(isEn?'TYPE THE ENGLISH WORD':'TYPE THE THAI WORD')+'</p>';
+   h+='<h2 class="qth">'+(isEn?esc(q.th):esc(q.en).toUpperCase())+'</h2>';
+   h+='<input id="ans" placeholder="พิมพ์คำตอบ..." '+(fb?'disabled':'')+' style="max-width:340px;margin:0 auto;text-align:center"><button class="btn" id="sub" style="max-width:340px;margin:12px auto 0" '+(fb?'disabled':'')+'>SUBMIT ▸</button>';
+  }
+  if(fb)h+='<p class="'+(fb.ok?'ok':'bad')+'" style="margin-top:12px">'+(fb.ok?'+'+fb.pts+' POINTS!':'เฉลย: '+esc(fb.ans))+'</p>';
+  h+='<p class="tiny" style="margin-top:10px">QUESTION '+(i+1)+' / '+qs.length+'</p></div>';
+  app.innerHTML=h;
+  var bs=app.querySelectorAll('[data-i]');
+  for(var b=0;b<bs.length;b++){bs[b].onclick=function(){answer(qs[i].opts[parseInt(this.getAttribute('data-i'),10)]);};}
+  var sub=document.getElementById('sub');
+  if(sub){sub.onclick=function(){answer(document.getElementById('ans').value);};var el=document.getElementById('ans');if(el&&!fb)el.focus();}
+ }
+ function answer(v){
+  if(fb||done)return;
+  var q=qs[i],ok=false;
+  if(q.type==='mc')ok=v===q.th;
+  else if(q.type==='type_en')ok=String(v).toLowerCase().trim()===q.en.toLowerCase();
+  else ok=String(v).trim()===q.th;
+  if(ok){score+=250;fb={ok:1,pts:250};S.correct();}
+  else{fb={ok:0,ans:q.type==='type_en'?q.en:q.th};S.wrong();}
+  render();
+  setTimeout(function(){
+   if(done)return;
+   i++;fb=null;
+   if(i<qs.length)render();
+   else{done=true;clearT();finish(loc,score+tleft*6);}
+  },1500);
+ }
+ T=setInterval(function(){
+  if(done)return;
+  tleft--;
+  if(tleft<=30&&tleft>0&&tleft%10===0)S.warn();
+  if(tleft<=0){clearT();done=true;finish(loc,score);}
+  else{var c=document.getElementById('clock');if(c){c.textContent=clockStr();c.style.color=tleft<=30?'#ff3b5c':'#ffe600';}}
+ },1000);
+ render();
+}
+/* eslint-disable */
+/* UNIT 2 games — NEON EVIDENCE (picture → word) and DEBATE DUEL (opinion builder).
+   Shares one closure with the other game parts. */
+
+/* [image file (no extension), english word, thai] */
+var ARTQ = [
+  ["opinion","opinion","ความคิดเห็น"],["agree","agree","เห็นด้วย"],["disagree","disagree","ไม่เห็นด้วย"],
+  ["believe","believe","เชื่อ"],["because","because","เพราะว่า"],["think","think","คิด"],
+  ["point","point","ประเด็น"],["idea","idea","แนวคิด"],["side","side","ฝ่าย"],
+  ["issue","issue","ประเด็นปัญหา"],["rule","rule","กฎ"],["fair","fair","ยุติธรรม"],
+  ["should","should","ควร"],["against","against","คัดค้าน"],["topic","topic","หัวข้อ"],
+  ["reason","reason","เหตุผล"],["support","support","สนับสนุน"],["agree with","agree_with","เห็นด้วยกับ"],
+  ["respect","respect","เคารพ"],["strong point","strong_point","จุดแข็ง"],
+  ["evidence","evidence","หลักฐาน"],["discuss","discuss","อภิปราย"],
+  ["solution","solution","ทางออก"],["argue","argue","โต้แย้ง"],["audience","audience","ผู้ฟัง"],
+  ["conclusion","conclusion","บทสรุป"],["persuade","persuade","โน้มน้าว"],["debate","debate","การโต้วาที"]
+];
+
+/* ---------- NEON EVIDENCE ---------- */
+/* Draws pictures the player has not seen yet, so every debate photo gets used. */
+function artPool() {
+  var seen = state.artSeen || [];
+  var fresh = ARTQ.filter(function (a) { return seen.indexOf(a[1]) < 0; });
+  if (fresh.length < 8) { state.artSeen = []; fresh = ARTQ.slice(); }
+  return shuffle(fresh).slice(0, 8);
+}
+
+function gPicture(loc) {
+  var qs = artPool().map(function (a) {
+    var wrong = shuffle(ARTQ.filter(function (b) { return b[1] !== a[1]; })).slice(0, 3).map(function (b) { return b[1]; });
+    return { img: a[1], word: a[0], th: a[2], opts: shuffle(wrong.concat([a[0]])) };
+  });
+  var i = 0, score = 0, sel = null, fb = null;
+
+  function render() {
+    var q = qs[i];
+    var h = hud(loc, score, '<span style="color:#4dffb8">ART ' + (i + 1) + '/' + qs.length + '</span>')
+      + pbar((i + 1) / qs.length * 100);
+    h += '<div class="card" style="text-align:center"><p class="lbl" style="text-align:center">NEON EVIDENCE • WHAT DOES THIS SHOW?</p>';
+    h += '<div class="holopic"><img src="' + ASSET_BASE + q.img + '.jpg" alt="" draggable="false"><span class="holoscan"></span></div>';
+    h += '<div class="grid2">';
+    q.opts.forEach(function (o, idx) {
+      var cls = 'opt';
+      if (sel !== null) { if (o === q.word) cls += ' right'; else if (sel === o) cls += ' wrongpick'; else cls += ' dim'; }
+      h += '<button class="' + cls + '" data-i="' + idx + '">' + esc(o) + '</button>';
+    });
+    h += '</div>';
+    if (fb) h += '<p class="' + (fb.ok ? 'ok' : 'bad') + '" style="margin-top:12px">' + (fb.ok ? '+' + fb.pts + ' POINTS!' : 'เฉลย: ' + esc(fb.ans) + ' • ' + esc(fb.th)) + '</p>';
+    h += '<p class="tiny" style="margin-top:12px">PICTURE ' + (i + 1) + ' / ' + qs.length + '</p></div>';
+    app.innerHTML = h;
+    var bs = app.querySelectorAll('.opt');
+    for (var b = 0; b < bs.length; b++) {
+      bs[b].onclick = function () { pick(qs[i].opts[parseInt(this.getAttribute('data-i'), 10)]); };
+    }
+  }
+
+  function pick(a) {
+    if (sel !== null) return;
+    sel = a;
+    var q = qs[i];
+    state.artSeen = (state.artSeen || []).concat([q.img]);
+    save();
+    if (a === q.word) { score += 175; fb = { ok: 1, pts: 175 }; S.correct(); }
+    else { fb = { ok: 0, ans: q.word, th: q.th }; S.wrong(); }
+    render();
+    setTimeout(function () {
+      i++; sel = null; fb = null;
+      if (i < qs.length) render(); else finish(loc, score);
+    }, 1400);
+  }
+  render();
+}
+
+/* ---------- DEBATE DUEL ---------- */
+var DUEL = [
+  {
+    q: "A: Do you think school uniforms should be required?\nB: …",
+    opts: [
+      { t: "I think students should choose what to wear.", ok: 1, w: "ยืนความเห็นชัดเจน + should + กริยาเดิม" },
+      { t: "Uniforms are boring.", ok: 0, w: "ไม่มีความเห็นที่เป็นประโยค และไม่มีเหตุผล" },
+      { t: "I don't know. Whatever.", ok: 0, w: "ไม่แสดงจุดยืน จึงไม่ใช่ความคิดเห็น" }
+    ]
+  },
+  {
+    q: "A: I think students shouldn't bring phones to school.\nB: …",
+    opts: [
+      { t: "I disagree. Phones are useful for learning.", ok: 1, w: "I disagree + เหตุผลด้วย because/ประโยคบอกเล่า" },
+      { t: "You are wrong.", ok: 0, w: "ไม่สุภาพ และไม่มีเหตุผลสนับสนุน" },
+      { t: "Phones is fun.", ok: 0, w: "ไวยากรณ์ผิด และไม่ใช่การโต้แย้ง" }
+    ]
+  },
+  {
+    q: "A: But many students play games in class.\nB: …",
+    opts: [
+      { t: "That's true. Maybe we can allow them with rules.", ok: 1, w: "ยอมรับจุดแข็งของอีกฝ่าย แล้วเสนอทางออก" },
+      { t: "No, that's not true.", ok: 0, w: "ปฏิเสธโดยไม่มีหลักฐาน" },
+      { t: "So what?", ok: 0, w: "ไม่ให้ความเคารพผู้พูด" }
+    ]
+  },
+  {
+    q: "Your partner is speaking. What should you do?",
+    opts: [
+      { t: "We should listen and respect their point.", ok: 1, w: "should + กริยาเดิม ใช้เสนอสิ่งที่ควรทำ" },
+      { t: "You should interrupt them quickly.", ok: 0, w: "ผิดกฎการโต้วาที และไม่ให้เกียรติกัน" },
+      { t: "We shouldn't care about the audience.", ok: 0, w: "ผู้ฟังคือส่วนหนึ่งของการโต้วาที" }
+    ]
+  },
+  {
+    q: "Which sentence gives real evidence?",
+    opts: [
+      { t: "For example, in Japan students clean their own classrooms.", ok: 1, w: "evidence = ตัวอย่างหรือข้อมูลจริงมาสนับสนุน" },
+      { t: "I think so too.", ok: 0, w: "แค่เห็นด้วย ยังไม่มีหลักฐาน" },
+      { t: "It is very very good.", ok: 0, w: "เป็นคำชม ไม่ใช่หลักฐาน" }
+    ]
+  },
+  {
+    q: "How do you close a debate politely?",
+    opts: [
+      { t: "In conclusion, both sides have strong points.", ok: 1, w: "In conclusion นำบทสรุป และให้เกียรติทั้งสองฝ่าย" },
+      { t: "Okay bye, I win.", ok: 0, w: "ไม่ใช่บทสรุป และไม่ให้เกียรติคู่โต้" },
+      { t: "Because because that's all.", ok: 0, w: "ไม่ใช่ประโยคที่สมบูรณ์" }
+    ]
+  }
+];
+
+function gOpinion(loc) {
+  var qs = shuffle(DUEL).slice(0, 5);
+  var i = 0, score = 0, sel = null, fb = null;
+
+  function render() {
+    var q = qs[i];
+    var h = hud(loc, score, '<span style="color:#ffe600">ROUND ' + (i + 1) + '/' + qs.length + '</span>')
+      + pbar((i + 1) / qs.length * 100);
+    h += '<div class="card duel">';
+    h += '<div class="dueltop">' + sticker('vb_monster', 46) + '<p class="lbl" style="margin:0">DEBATE DUEL • CHOOSE THE BEST REPLY</p>' + sticker('vb_cat', 42) + '</div>';
+    h += '<p class="duelq">' + esc(q.q).replace(/\n/g, '<br>') + '</p>';
+    q.opts.forEach(function (o, idx) {
+      var cls = 'duelopt';
+      if (sel !== null) { if (o.ok) cls += ' right'; else if (sel === idx) cls += ' wrongpick'; else cls += ' dim'; }
+      h += '<button class="' + cls + '" data-i="' + idx + '">' + esc(o.t) + '</button>';
+    });
+    if (fb) {
+      h += '<p class="' + (fb.ok ? 'ok' : 'bad') + '" style="margin-top:10px">' + (fb.ok ? 'STRONG POINT! +' + fb.pts : 'ลองอ่านคำตอบที่ถูกต้องด้านบน') + '</p>';
+      h += '<p class="duelwhy">JET: ' + esc(fb.w) + '</p>';
+    }
+    h += '</div>';
+    app.innerHTML = h;
+    var bs = app.querySelectorAll('.duelopt');
+    for (var b = 0; b < bs.length; b++) {
+      bs[b].onclick = function () { pick(parseInt(this.getAttribute('data-i'), 10)); };
+    }
+  }
+
+  function pick(idx) {
+    if (sel !== null) return;
+    sel = idx;
+    var q = qs[i], o = q.opts[idx];
+    if (o.ok) { score += 320; fb = { ok: 1, pts: 320, w: o.w }; S.match(); }
+    else { fb = { ok: 0, w: q.opts[0].w }; S.wrong(); }
+    render();
+    setTimeout(function () {
+      i++; sel = null; fb = null;
+      if (i < qs.length) render(); else finish(loc, score);
+    }, 2400);
+  }
+  render();
+}
+/* eslint-disable */
+/* STICKER STORM — every sticker in the game becomes a question, three ways round.
+   Shares one closure with the other game parts. */
+
+/* [sticker file, english word, thai] — one row for every image the game ships. */
+var STICKQ = [
+  ["vb_arrow","arrow","ลูกศร"],["vb_banana","banana","กล้วย"],["vb_bangkok","Bangkok","กรุงเทพ"],
+  ["vb_boat","boat","เรือ"],["vb_boss","boss","หัวหน้า"],["vb_boy","boy","เด็กผู้ชาย"],
+  ["vb_car","car","รถยนต์"],["vb_cat","cat","แมว"],["vb_chonburi","Chonburi","ชลบุรี"],
+  ["vb_cobra","cobra","งูเห่า"],["vb_coconut","coconut","มะพร้าว"],["vb_coin","coin","เหรียญ"],
+  ["vb_cute_girl","cute girl","เด็กผู้หญิงน่ารัก"],["vb_diamond","diamond","เพชร"],["vb_dog","dog","หมา"],
+  ["vb_dragon","dragon","มังกร"],["vb_durian","durian","ทุเรียน"],["vb_elephant","elephant","ช้าง"],
+  ["vb_false","false","เท็จ"],["vb_flag","flag","ธง"],["vb_flower","flower","ดอกไม้"],
+  ["vb_food_stall","food stall","ร้านอาหาร"],["vb_football","football","ฟุตบอล"],
+  ["vb_game_console","game console","เครื่องเกม"],["vb_ghost","ghost","ผี"],["vb_girl","girl","เด็กผู้หญิง"],
+  ["vb_hallelujah","hallelujah","ไชโย"],["vb_heart","heart","หัวใจ"],["vb_helicopter","helicopter","เฮลิคอปเตอร์"],
+  ["vb_home","home","บ้าน"],["vb_jet","jet","เครื่องบินไอพ่น"],["vb_lantern","lantern","โคมไฟ"],
+  ["vb_location","location","ตำแหน่ง"],["vb_lotus","lotus","ดอกบัว"],["vb_lucky","lucky","โชคดี"],
+  ["vb_mango","mango","มะม่วง"],["vb_map_icon","map","แผนที่"],["vb_medal","medal","เหรียญรางวัล"],
+  ["vb_monster","monster","สัตว์ประหลาด"],["vb_motorcycle","motorcycle","มอเตอร์ไซค์"],
+  ["vb_mountain","mountain","ภูเขา"],["vb_muay_thai","muay thai","มวยไทย"],["vb_music","music","ดนตรี"],
+  ["vb_palm_tree","palm tree","ต้นปาล์ม"],["vb_plane","plane","เครื่องบิน"],
+  ["vb_police_car","police car","รถตำรวจ"],["vb_questionmark","question mark","เครื่องหมายคำถาม"],
+  ["vb_star","star","ดาว"],["vb_start","start","เริ่ม"],["vb_target","target","เป้าหมาย"],
+  ["vb_temple","temple","วัด"],["vb_temple2","pagoda","เจดีย์"],["vb_throphy","trophy","ถ้วยรางวัล"],
+  ["vb_tiger","tiger","เสือ"],["vb_traffic_cone","traffic cone","กรวยจราจร"],["vb_train","train","รถไฟ"],
+  ["vb_treasure","treasure","ขุมทรัพย์"],["vb_true","true","จริง"],["vb_tuktuk","tuk tuk","ตุ๊กตุ๊ก"],
+  /* the original neon Thailand pack rides along too — every image in the game is a question */
+  ["tiger","tiger","เสือ"],["buddha","buddha","พระพุทธรูป"],["tuk_tuk","tuk tuk","ตุ๊กตุ๊ก"],
+  ["elephant","elephant","ช้าง"],["durian","durian","ทุเรียน"],["temple","temple","วัด"],
+  ["pad_thai","pad thai","ผัดไทย"],["sticky_rice","sticky rice","ข้าวเหนียว"],["thai_tea","thai tea","ชาไทย"],
+  ["bangkok_sign","Bangkok","กรุงเทพ"],["boat","boat","เรือ"],["palm","palm tree","ต้นปาล์ม"],
+  ["hibiscus","hibiscus","ดอกชบา"],["cat_cool","cool cat","แมวเท่"],["cat_dj","dj cat","ดีเจแมว"],
+  ["cat_king","king cat","ราชาแมว"],["cat_peace","peace cat","แมวสันติภาพ"],["bubble_wow","wow","ว้าว"],
+  ["star","star","ดาว"],["btn_play","play button","ปุ่มเล่น"],["gear","gear","เกียร์"],
+  ["trophy","trophy","ถ้วยรางวัล"],["medal","medal","เหรียญรางวัล"],["crown","crown","มงกุฎ"],
+  ["chest","treasure chest","หีบสมบัติ"],["qmark","question mark","เครื่องหมายคำถาม"],
+  ["gem","gem","อัญมณี"],["coins","gold coins","เหรียญทอง"],["flag","flag","ธง"],
+  ["som_tum","som tum","ส้มตำ"],["tom_yum","tom yum","ต้มยำ"],["mango","mango","มะม่วง"],
+  ["coconut","coconut","มะพร้าว"],["dog_cool","cool dog","หมาคูล"],["handheld","handheld","เครื่องเกมมือถือ"],
+  ["headphones","headphones","หูฟัง"],["cassette","cassette","เทป"],["motorbike","motorbike","มอเตอร์ไซค์"],
+  ["bubble_chat","speech bubble","กรอบคำพูด"],["pin","map pin","หมุดปักแผนที่"],["map_icon","map","แผนที่"],
+  ["camera","camera","กล้อง"],["student_boy","student","นักเรียน"],["mortar","mortar","ครก"],
+  ["skytrain","skytrain","รถไฟฟ้า"],["cat_sleep","sleepy cat","แมวหลับ"],["cat_ninja","ninja cat","แมวนินจา"],
+  ["student_thumb","thumbs up","ชูนิ้วโป้ง"],["controller","controller","จอยเกม"]
+];
+
+/* Draws stickers the player has not seen yet, so the whole pack gets used. */
+function stickerPool(n) {
+  n = n || 8;
+  var seen = state.stickSeen || [];
+  var fresh = STICKQ.filter(function (a) { return seen.indexOf(a[0]) < 0; });
+  if (fresh.length < n) { state.stickSeen = []; fresh = STICKQ.slice(); }
+  return shuffle(fresh).slice(0, n);
+}
+
+function stickerDistractors(row) {
+  return shuffle(STICKQ.filter(function (b) { return b[1] !== row[1]; })).slice(0, 3);
+}
+
+/* Rounds mix three question shapes: name the sticker, find the sticker, Thai meaning. */
+function stickerQuestions(n) {
+  return stickerPool(n).map(function (a, idx) {
+    var others = stickerDistractors(a);
+    var type = idx % 3;
+    var q = { type: type, img: a[0], word: a[1], th: a[2] };
+    if (type === 0) q.opts = shuffle(others.map(function (b) { return b[1]; }).concat([a[1]]));
+    else if (type === 1) q.picks = shuffle(others.concat([a]));
+    else q.opts = shuffle(others.map(function (b) { return b[2]; }).concat([a[2]]));
+    return q;
+  });
+}
+
+function gSticker(loc) {
+  var qs = stickerQuestions(8);
+  var i = 0, score = 0, sel = null, fb = null;
+
+  function render() {
+    var q = qs[i];
+    var h = hud(loc, score, '<span style="color:#4dffb8">CARD ' + (i + 1) + '/' + qs.length + '</span>')
+      + pbar((i + 1) / qs.length * 100);
+    h += '<div class="card" style="text-align:center"><p class="lbl" style="text-align:center">';
+    h += q.type === 1 ? 'STICKER STORM • FIND THIS STICKER' : q.type === 2 ? 'STICKER STORM • ความหมายไทย' : 'STICKER STORM • NAME THIS STICKER';
+    h += '</p>';
+
+    if (q.type === 1) {
+      h += '<p class="shootq" style="margin-bottom:2px">' + esc(q.word.toUpperCase()) + '</p>';
+      h += '<p class="shootsub">' + esc(q.th) + ' — แตะสติกเกอร์ที่ตรงกับคำนี้</p>';
+      h += '<div class="pickgrid">';
+      q.picks.forEach(function (p, idx) {
+        var cls = 'pickstk';
+        if (sel !== null) { if (p[0] === q.img) cls += ' right'; else if (sel === p[0]) cls += ' wrongpick'; else cls += ' dim'; }
+        h += '<button class="' + cls + '" data-i="' + idx + '">' + sticker(p[0], 76) + '</button>';
+      });
+      h += '</div>';
+    } else {
+      h += '<div class="stkstage">' + sticker(q.img, 150) + '<span class="stickrack"></span></div>';
+      var correct = q.type === 2 ? q.th : q.word;
+      h += '<div class="grid2">';
+      q.opts.forEach(function (o, idx) {
+        var cls = 'opt';
+        if (sel !== null) { if (o === correct) cls += ' right'; else if (sel === o) cls += ' wrongpick'; else cls += ' dim'; }
+        h += '<button class="' + cls + '" data-i="' + idx + '">' + esc(o) + '</button>';
+      });
+      h += '</div>';
+    }
+
+    if (fb) h += '<p class="' + (fb.ok ? 'ok' : 'bad') + '" style="margin-top:12px">' + (fb.ok ? '+' + fb.pts + ' POINTS!' : 'เฉลย: ' + esc(fb.ans) + ' • ' + esc(fb.th)) + '</p>';
+    h += '<p class="tiny" style="margin-top:12px">STICKER ' + (i + 1) + ' / ' + qs.length + '</p></div>';
+    app.innerHTML = h;
+
+    var bs = app.querySelectorAll('[data-i]');
+    for (var b = 0; b < bs.length; b++) {
+      bs[b].onclick = function () {
+        var n = parseInt(this.getAttribute('data-i'), 10);
+        pick(q.type === 1 ? q.picks[n][0] : q.opts[n]);
+      };
+    }
+  }
+
+  function pick(a) {
+    if (sel !== null) return;
+    sel = a;
+    var q = qs[i];
+    state.stickSeen = (state.stickSeen || []).concat([q.img]);
+    save();
+    if (a === (q.type === 1 ? q.img : (q.type === 2 ? q.th : q.word))) { score += 140; fb = { ok: 1, pts: 140 }; S.correct(); }
+    else { fb = { ok: 0, ans: q.word, th: q.th }; S.wrong(); }
+    render();
+    setTimeout(function () {
+      i++; sel = null; fb = null;
+      if (i < qs.length) render(); else finish(loc, score);
+    }, 1400);
+  }
+
+  render();
+}
+/* eslint-disable */
+/* BONUS SHOOTERS — random rounds that ambush a level.
+   STICKER LASER: shoot the sticker that matches the word.
+   NEON STICKS: shoot the long neon stick that answers the question.
+   Shares one closure with the other game parts. */
+
+function cannonSvg() {
+  return '<svg width="92" height="56" viewBox="0 0 92 56" style="overflow:visible">'
+    + '<ellipse cx="46" cy="50" rx="30" ry="6" fill="rgba(0,229,255,.22)"/>'
+    + '<path d="M30 50 L35 28 L57 28 L62 50 Z" fill="#1b0638" stroke="#00e5ff" stroke-width="2"/>'
+    + '<rect x="39" y="10" width="14" height="20" rx="6" fill="#0b0022" stroke="#ff2fb9" stroke-width="2"/>'
+    + '<circle cx="46" cy="9" r="6" fill="#ff2fb9" style="filter:drop-shadow(0 0 8px #ff2fb9)"/>'
+    + '<path d="M20 32 L34 32 M58 32 L72 32" stroke="#8a2bff" stroke-width="3" stroke-linecap="round"/>'
+    + '<path d="M46 6 L46 -2" stroke="#00e5ff" stroke-width="2" opacity=".7"/>'
+    + '</svg>';
+}
+
+function fireBeam(el) {
+  var st = document.getElementById('stage'), svg = document.getElementById('beams');
+  if (!st || !svg) return;
+  var sr = st.getBoundingClientRect(), tr = el.getBoundingClientRect();
+  var x1 = sr.width / 2, y1 = sr.height - 10;
+  var x2 = tr.left - sr.left + tr.width / 2, y2 = tr.top - sr.top + tr.height / 2;
+  var ln = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+  ln.setAttribute('x1', x1); ln.setAttribute('y1', y1);
+  ln.setAttribute('x2', x2); ln.setAttribute('y2', y2);
+  ln.setAttribute('stroke', '#00e5ff'); ln.setAttribute('stroke-width', '3.4');
+  ln.setAttribute('stroke-linecap', 'round');
+  ln.setAttribute('style', 'filter:drop-shadow(0 0 10px #00e5ff)');
+  svg.appendChild(ln);
+  setTimeout(function () { if (ln.parentNode) ln.parentNode.removeChild(ln); }, 480);
+}
+
+/* ---------- STICKER LASER ---------- */
+function gStickerLaser(loc) {
+  var rows = stickerPool(8);
+  var qs = rows.map(function (a) {
+    return { ans: a[0], word: a[1], th: a[2], picks: shuffle(stickerDistractors(a).concat([a])) };
+  });
+  var i = 0, score = 0, fb = null, misses = 0, locked = false;
+  var POS = [[27, 30], [73, 26], [28, 70], [72, 66]];
+
+  function render() {
+    if (!qs[i]) return;
+    var q = qs[i];
+    var h = hud(loc, score, '<span style="color:#ff2fb9">SHOT ' + (i + 1) + '/' + qs.length + '</span>')
+      + pbar((i + 1) / qs.length * 100);
+    h += '<div class="card" style="text-align:center"><p class="lbl" style="text-align:center">STICKER LASER • SHOOT THE RIGHT STICKER</p>';
+    h += '<p class="shootq">' + esc(q.word.toUpperCase()) + '</p>';
+    h += '<p class="shootsub">' + esc(q.th) + ' — ยิงเลเซอร์ใสสติกเกอร์ที่ตรงกัน</p>';
+    h += '<div class="shootstage" id="stage"><svg class="beams" id="beams"></svg>';
+    q.picks.forEach(function (p, idx) {
+      h += '<button class="tgt" data-i="' + idx + '" style="left:' + POS[idx][0] + '%;top:' + POS[idx][1] + '%">'
+        + sticker(p[0], idx % 2 ? 74 : 88) + '</button>';
+    });
+    h += '<div class="cannon">' + cannonSvg() + '</div></div>';
+    if (fb) h += '<p class="shootfb ' + (fb.ok ? 'ok' : 'bad') + '">' + (fb.ok ? '+' + fb.pts + ' POINTS!' : 'ยังไม่ใช่ — ' + esc(fb.msg)) + '</p>';
+    h += '<p class="tiny" style="margin-top:8px">ตอบถูก ' + score / 175 + ' / ' + qs.length + ' นัด</p></div>';
+    app.innerHTML = h;
+
+    var bs = app.querySelectorAll('.tgt');
+    for (var b = 0; b < bs.length; b++) {
+      bs[b].onclick = function () { fire(this, q); };
+    }
+  }
+
+  function fire(el, q) {
+    if (locked) return;
+    locked = true;
+    fireBeam(el);
+    S.zap();
+    var idx = parseInt(el.getAttribute('data-i'), 10);
+    var ok = q.picks[idx][0] === q.ans;
+    state.stickSeen = (state.stickSeen || []).concat([q.ans]);
+    save();
+
+    if (ok) {
+      el.className = 'tgt hit';
+      score += 175; fb = { ok: 1, pts: 175 }; S.correct();
+      setTimeout(function () { locked = false; i++; fb = null; misses = 0; if (i < qs.length) render(); else finish(loc, score); }, 900);
+    } else {
+      el.className = 'tgt dead';
+      misses++;
+      S.wrong();
+      fb = { ok: 0, msg: 'ลองยิงนัดใหม่' };
+      if (misses >= 3) {
+        fb = { ok: 0, msg: q.word + ' • ' + q.th };
+        setTimeout(function () { locked = false; i++; fb = null; misses = 0; if (i < qs.length) render(); else finish(loc, score); }, 1500);
+      } else {
+        setTimeout(function () { locked = false; render(); }, 700);
+      }
+    }
+  }
+
+  render();
+}
+
+/* ---------- NEON STICKS ---------- */
+var STICKS = [
+  ["morning glory", "ผักบุ้ง", "vegetable"], ["cabbage", "กะหล่ำปลี", "vegetable"], ["carrot", "แครอท", "vegetable"],
+  ["pumpkin", "ฟักทอง", "vegetable"], ["eggplant", "มะเขือ", "vegetable"], ["basil", "กะเพรา", "vegetable"],
+  ["durian", "ทุเรียน", "fruit"], ["mango", "มะม่วง", "fruit"], ["coconut", "มะพร้าว", "fruit"],
+  ["banana", "กล้วย", "fruit"], ["papaya", "มะละกอ", "fruit"], ["orange", "ส้ม", "fruit"],
+  ["tiger", "เสือ", "animal"], ["elephant", "ช้าง", "animal"], ["cat", "แมว", "animal"],
+  ["dog", "หมา", "animal"], ["cobra", "งูเห่า", "animal"], ["duck", "เป็ด", "animal"],
+  ["temple", "วัด", "place"], ["market", "ตลาด", "place"], ["school", "โรงเรียน", "place"],
+  ["hospital", "โรงพยาบาล", "place"], ["beach", "ชายหาด", "place"], ["station", "สถานี", "place"],
+  ["tuk tuk", "ตุ๊กตุ๊ก", "transport"], ["boat", "เรือ", "transport"], ["train", "รถไฟ", "transport"],
+  ["plane", "เครื่องบิน", "transport"], ["motorcycle", "มอเตอร์ไซค์", "transport"], ["skytrain", "รถไฟฟ้า", "transport"],
+  ["pad thai", "ผัดไทย", "food"], ["tom yum", "ต้มยำ", "food"], ["sticky rice", "ข้าวเหนียว", "food"],
+  ["thai tea", "ชาไทย", "food"], ["som tum", "ส้มตำ", "food"], ["noodles", "ก๋วยเตี๋ยว", "food"],
+  ["camera", "กล้อง", "object"], ["headphones", "หูฟัง", "object"], ["trophy", "ถ้วยรางวัล", "object"],
+  ["crown", "มงกุฎ", "object"], ["flag", "ธง", "object"], ["controller", "จอยเกม", "object"]
+];
+
+var STICKCAT = {
+  vegetable: ["WHICH ONE IS A VEGETABLE?", "อันไหนคือผัก?"],
+  fruit: ["WHICH ONE IS A FRUIT?", "อันไหนคือผลไม้?"],
+  animal: ["WHICH ONE IS AN ANIMAL?", "อันไหนคือสัตว์?"],
+  place: ["WHICH ONE IS A PLACE?", "อันไหนคือสถานที่?"],
+  transport: ["WHICH ONE IS A VEHICLE?", "อันไหนคือยานพาหนะ?"],
+  food: ["WHICH ONE IS FOOD?", "อันไหนคืออาหาร?"],
+  object: ["WHICH ONE IS AN OBJECT?", "อันไหนคือสิ่งของ?"]
+};
+
+function stickQuestions() {
+  return shuffle(Object.keys(STICKCAT)).map(function (cat) {
+    var ofCat = STICKS.filter(function (w) { return w[2] === cat; });
+    var ans = shuffle(ofCat)[0];
+    var others = shuffle(STICKS.filter(function (w) { return w[2] !== cat; })).slice(0, 3);
+    return {
+      q: STICKCAT[cat][0], qth: STICKCAT[cat][1],
+      ans: ans[0], ansth: ans[1],
+      picks: shuffle(others.concat([ans]))
+    };
+  });
+}
+
+function gSticks(loc) {
+  var qs = stickQuestions();
+  var i = 0, score = 0, fb = null, misses = 0, locked = false;
+  var LP = [12, 37.5, 62.5, 88];
+
+  function render() {
+    if (!qs[i]) return;
+    var q = qs[i];
+    var h = hud(loc, score, '<span style="color:#4dffb8">STICK ' + (i + 1) + '/' + qs.length + '</span>')
+      + pbar((i + 1) / qs.length * 100);
+    h += '<div class="card" style="text-align:center"><p class="lbl" style="text-align:center">NEON STICKS • SHOOT THE CORRECT ONE</p>';
+    h += '<p class="shootq">' + esc(q.q) + '</p>';
+    h += '<p class="shootsub">' + esc(q.qth) + '</p>';
+    h += '<div class="shootstage" id="stage"><svg class="beams" id="beams"></svg><div class="stickrow">';
+    q.picks.forEach(function (p, idx) {
+      h += '<button class="stickcol v' + (idx + 1) + '" data-i="' + idx + '" style="left:' + LP[idx] + '%">'
+        + '<b>' + esc(p[0]) + '</b><small>' + esc(p[1]) + '</small></button>';
+    });
+    h += '</div><div class="cannon">' + cannonSvg() + '</div></div>';
+    if (fb) h += '<p class="shootfb ' + (fb.ok ? 'ok' : 'bad') + '">' + (fb.ok ? '+' + fb.pts + ' POINTS!' : 'ยังไม่ใช่ — ' + esc(fb.msg)) + '</p>';
+    h += '<p class="tiny" style="margin-top:8px">ตอบถูก ' + score / 200 + ' / ' + qs.length + ' ข้อ</p></div>';
+    app.innerHTML = h;
+
+    var bs = app.querySelectorAll('.stickcol');
+    for (var b = 0; b < bs.length; b++) {
+      bs[b].onclick = function () { fire(this, q); };
+    }
+  }
+
+  function fire(el, q) {
+    if (locked) return;
+    locked = true;
+    fireBeam(el);
+    S.beam();
+    var idx = parseInt(el.getAttribute('data-i'), 10);
+    var ok = q.picks[idx][0] === q.ans;
+
+    if (ok) {
+      el.className = el.className + ' hitsticks';
+      score += 200; fb = { ok: 1, pts: 200 }; S.correct();
+      setTimeout(function () { locked = false; i++; fb = null; misses = 0; if (i < qs.length) render(); else finish(loc, score); }, 900);
+    } else {
+      el.className = el.className + ' dead';
+      misses++;
+      S.wrong();
+      fb = { ok: 0, msg: 'ลองยิงแท่งใหม่' };
+      if (misses >= 3) {
+        fb = { ok: 0, msg: q.ans + ' • ' + q.ansth };
+        setTimeout(function () { locked = false; i++; fb = null; misses = 0; if (i < qs.length) render(); else finish(loc, score); }, 1500);
+      } else {
+        setTimeout(function () { locked = false; render(); }, 700);
+      }
+    }
+  }
+
+  render();
+}
+/* eslint-disable */
+/* Raw game script: concatenated into the standalone offline build. Shares one closure with the other game parts. */
+if(!state.name){
+ vWelcome();
+}else{
+ if(!state.created){state.created=Date.now();save();}
+ selId=LOCS[curIdx()].id;
+ vMap();
+}
+})();
+</script>
+</body>
+</html>

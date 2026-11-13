@@ -1,0 +1,29 @@
+VOCAB RIDER — OPINION ARENA (OFFLINE EDITION)
+=============================================
+
+HOW TO PLAY
+1. Unzip this folder.
+2. Double-click index.html — the game opens in your browser right away.
+3. No internet, no install, no account. Works anywhere.
+
+TIP: keep the assets folder next to index.html — it holds
+all the neon sticker art the game uses.
+TIP: use a recent Chrome, Edge, Safari or Firefox.
+On a phone or tablet, open the file with your browser
+(choose 'Open with Chrome').
+
+WHAT'S INSIDE
+- ONE unit: OPINION ARENA — 10 arenas from BANGKOK to NIGHT CITY
+- 30 debate words: opinion, agree, disagree, because, reason,
+  evidence, persuade, conclusion and more
+- 10 arcade mini-games, including NEON EVIDENCE (match a photo to
+  its word), STICKER STORM (name the sticker) and DEBATE DUEL
+  (choose the best opinion reply)
+- JET the cyber-cat co-pilot with hints for sentence order and anagrams
+- Avatar system, 910 points and 30 stars
+- A printable certificate with a full city-by-city report (print or PDF)
+
+Score and progress are saved in the browser on that device
+(localStorage), so you can close the game and continue later.
+
+© 20XX KNIGHT INDUSTRIES • THAILAND
